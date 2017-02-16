@@ -276,3 +276,6 @@ To search for for VBA examples, include a brief task description and the name of
 [*][url=http://ahkscript.org/boards/viewtopic.php?f=6&t=77#p493]MS Word[/url][/list][/list]
 [hr][/hr]
 I have inevitably been inaccurate or flat out wrong, or I have left out important information. Comments, suggestions, and corrections are appreciated!  :D
+
+Source code for this tutorial is now on github: https://github.com/ahkon/MS-Office-COM-Basics
+Feel free to make a pull request or start an issue if you have a suggestion; I will merge it and update this tutorial if I agree with the changes.
