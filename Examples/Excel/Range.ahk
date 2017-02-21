@@ -1,3 +1,7 @@
+; Note: There is usually no need to Activate/Select a range in order to get or set the value.
+; Activate/Select is done here for demonstration only -- it demonstrates that a reference to a range has been retrieved.
+; See 'Copy a range' below for how to copy ranges.
+
 xlApp := ComObjActive("Excel.Application")  ; Excel must be running.
 
 
@@ -32,3 +36,14 @@ MyRange := xlApp.Worksheets(2).Range("C2")  ; Get a range object representing ce
 xlApp.Worksheets(2).Activate  ; The sheet needs to be activated before a cell is selected.
 MyRange.Select
 MsgBox, % "The cell " MyRange.Address " should be selected on worksheet '" MyRange.Worksheet.Name "'."
+
+
+; Copy a range
+; Assign cell C2 to cell B1.
+xlApp.Range("B1") := xlApp.Range("C2")
+MsgBox, % "Cell B1 should now contain the same thing as cell C2."
+
+; Assign cell C2 on Worksheet 2, to cell B1 on sheet 1.
+; Unlike 'Select' above, the sheets do not need to be active.
+xlApp.Worksheets(1).Range("B1") := xlApp.Worksheets(2).Range("C2")
+MsgBox, % "Cell B1 on worksheet 1 should now contain the same thing as cell C2 on worksheet 2."
