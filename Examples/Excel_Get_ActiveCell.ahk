@@ -3,8 +3,8 @@ xlApp := ComObjActive("Excel.Application")  ; Excel must be running.
 MyCell := xlApp.ActiveCell
 
 ; Display the results.
-MsgBox, % "The cell at address " MyCell.Address " has a value of " MyCell.Value 
-        . " and has the text " MyCell.Text "."
+MsgBox, % "The cell at address " MyCell.Address " has a value of '" MyCell.Value 
+        . "' and has the text '" MyCell.Text "'."
 
 ; Note: 'Cell.Value' and 'Cell.Text' may differ from each other depending on the cell contents.
 ; More info: 
