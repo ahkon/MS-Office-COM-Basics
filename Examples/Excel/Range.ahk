@@ -24,7 +24,7 @@ MyRange.Select
 MsgBox, % "The range " MyRange.Address " should be selected. This range contains " MyRange.Rows.Count
         . " rows and " MyRange.Columns.Count " columns."
 
-; Same as the above line, except this uses the cells method to reference individual cells instead of Range.
+; Same as the above line, except this uses the 'Cells' method (instead of 'Range') to reference individual cells.
 MyRange := xlApp.Range(xlApp.Cells(2, 3), xlApp.Cells(7, 6))  ; Get a range object representing cells C2 to F7.
 MyRange.Select
 MsgBox, % "The range " MyRange.Address " should be selected. This range contains " MyRange.Rows.Count
