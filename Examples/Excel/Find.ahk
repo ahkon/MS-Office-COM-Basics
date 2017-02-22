@@ -37,3 +37,4 @@ try while FoundCell := MyRange.FindNext(FoundCell)
 
 ; References:
 ;   http://www.cpearson.com/excel/FindAll.aspx
+;   https://autohotkey.com/boards/viewtopic.php?f=5&t=28405
