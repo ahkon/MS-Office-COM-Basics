@@ -18,7 +18,7 @@ MyWorkbook := xlApp.Workbooks.Open(FilePath, 0, 0)  ; Open the workbook. UpdateL
 ; Determine the total range. Get the last cell in that range.
 LastRow := MyWorkbook.Sheets(1).UsedRange.Rows.Count  ; Get the number of rows in the used range.
 MyRange := MyWorkbook.Sheets(1).Range("A1:Z" LastRow)  ; Get the range of all cells in columns A-Z in the used range.
-LastCell := MyRange.Cells(MyRange.Cells.Count)  ; The last cell in the used range.
+LastCell := MyRange.Cells(MyRange.Cells.Count)  ; The last cell in MyRange.
 
 ; Find the first cell.
 FoundCell := MyRange.Find(FindThis, LastCell, xlValues, xlWhole)  ; LookIn:=xlValues, LookAt:=xlWhole
