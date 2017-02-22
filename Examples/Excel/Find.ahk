@@ -18,15 +18,17 @@ MyWorkbook := xlApp.Workbooks.Open(FilePath, 0, 0)  ; Open the workbook. UpdateL
 ; Determine the total range. Get the last cell in that range.
 LastRow := MyWorkbook.Sheets(1).UsedRange.Rows.Count  ; Get the number of rows in the used range.
 MyRange := MyWorkbook.Sheets(1).Range("A1:Z" LastRow)  ; Get the range of all cells in columns A-Z in the used range.
-LastCell := MyRange.Cells(MyRange.Cells.Count)  ; The last cell in MyRange.
+LastCell := MyRange.Cells(MyRange.Cells.Count)  ; The last cell MyRange.
 
 ; Find the first cell.
 FoundCell := MyRange.Find(FindThis, LastCell, xlValues, xlWhole)  ; LookIn:=xlValues, LookAt:=xlWhole
 FirstAddr := FoundCell.Address  ; The while-loop below will exit when it reaches this cell.
+if (!FoundCell)
+    return
 MsgBox, % "The first found cell in the range is " FirstAddr " with a value of '" FoundCell.Value "'."
 
 ; Repeat the search.
-while FoundCell := MyRange.FindNext(FoundCell)
+try while FoundCell := MyRange.FindNext(FoundCell)
 {
     if (FoundCell.Address = FirstAddr)  ; Loop has wrapped around to the first found cell. Exit the loop.
         break
