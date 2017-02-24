@@ -16,6 +16,6 @@ olMail.Body := "abc123`n`n"
 olMail.Attachments.Add(Image, olByValue, 0)  ; Add an attachment.
 olMail.HTMLBody := olMail.HTMLBody "<br><B>Embedded Image:</B><br>"  ; Include the image in the body of the email.
                 . "<img src='cid:" ImageName "' width='500' height='400'><br>"
-                . "<br>Best Regards, <br>Someone</font></span>"
+                . "<br>Best regards, <br>Someone</font></span>"
 olMail.Display
 ;~ olMail.Send
