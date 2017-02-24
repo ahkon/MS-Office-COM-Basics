@@ -55,7 +55,7 @@ FindFreeName(FileDir, FileName, FileExt)
     return, FilePath
 }
 
-; Removes character that are not allowed in file names (\ / : * ? " < > |)
+; Removes characters that are not allowed in file names (\ / : * ? " < > |)
 RemoveIllegalChars(FileName)
 {
     for i, Char in ["\", "/", ":", "*", "?", """", "<", ">", "|"]
