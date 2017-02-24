@@ -27,4 +27,4 @@ olMail.Display
 ;       This post shows a VBA example that uses the Word editor; Word is usually the editor that is used internally by Outlook to 
 ;       compose emails. HtmlBody is also used in another post in this thread.
 ;   - https://autohotkey.com/boards/viewtopic.php?p=119403#p119403 -- This post also uses the Word editor. It pastes a chart from
-;       Excel into the email, but the same process can be used for images.
+;       Excel into the email; the same process can be used for images.
