@@ -19,3 +19,12 @@ olMail.HTMLBody := olMail.HTMLBody "<br><B>Embedded Image:</B><br>"  ; Include t
                 . "<br>Best regards, <br>Someone</font></span>"
 olMail.Display
 ;~ olMail.Send
+
+; References:
+;   - https://autohotkey.com/boards/viewtopic.php?f=5&t=28166 -- This thread shows more examples of HtmlBody, and also has links to
+;       the WinClip() method.
+;   - https://www.mrexcel.com/forum/excel-questions/708544-visual-basic-applications-copy-excel-into-outlook.html#post3496819 --
+;       This post shows a VBA example that uses the Word editor; Word is usually the editor that is used internally by Outlook to 
+;       compose emails. HtmlBody is also used in another post in this thread.
+;   - https://autohotkey.com/boards/viewtopic.php?p=119403#p119403 -- This post also uses the Word editor. It pastes a chart from
+;       Excel into the email, but the same process can be used for images.
