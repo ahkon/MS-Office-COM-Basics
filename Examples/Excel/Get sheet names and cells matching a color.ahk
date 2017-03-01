@@ -1,5 +1,6 @@
 ; This script does the following:
-;   - Open the Test.xlsx workbook (located in the same directory as the script)
+;   - Open the test workbook (located in the same directory as this script -
+;     "..\Get sheet names and cells matching a color DATA.xlsx")
 ;   - Loop through each sheet in the workbook. Collect the name and tab-color of each sheet
 ;   - Prompt the user to select a column
 ;   - Loop through the cells in the chosen column. Display (MsgBox) the address and color of each cell. If the cell
