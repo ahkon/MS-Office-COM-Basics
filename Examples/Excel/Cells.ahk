@@ -1,4 +1,4 @@
-; Get a reference a cell in the active Excel application.
+; Get a reference to a cell in the active Excel application.
 xlApp := ComObjActive("Excel.Application")  ; Excel must be running.
 
 MyCell := xlApp.Cells(2, 3)  ; Get the cell at row 2, column 3.
