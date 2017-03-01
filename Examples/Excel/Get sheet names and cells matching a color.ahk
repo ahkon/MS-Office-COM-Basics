@@ -6,7 +6,7 @@
 ;     color matches 0x00FFFF then collect the value.
 ;   - Display the results
 
-Path := A_ScriptDir "\Test.xlsx"
+Path := A_ScriptDir "\Get sheet names and cells matching a color DATA.xlsx"
 xlApp := ComObjCreate("Excel.Application")
 MyWorkbook := xlApp.Workbooks.Open(Path)  ; Open an existing file
 xlApp.Visible := True
