@@ -20,7 +20,7 @@ while MyColumn = ""  ; Prompt the user to enter a column
     MyColumn := GetColumn()
 
 FirstCell :=  MyWorkbook.Sheets(1).Cells(1, MyColumn)
-; Find the last cell in the Column which is not blank.
+; Find the last cell which is not blank in the specified column.
 ; Start at the last cell in the Column, and look upwards for a non-blank cell
 LastCell := xlApp.Sheets(1).Cells(xlApp.Rows.Count, MyColumn).End(-4162)  ; xlUp = -4162
 
