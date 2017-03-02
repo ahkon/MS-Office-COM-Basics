@@ -39,7 +39,7 @@ for i, ThisInfo in MyInfo.Sheets
 {
     MsgBox, % "#: " i "`n"
             . "Name: " ThisInfo.Name "`n"
-            . "Color: " Format("0x{:06X}", ThisInfo.Color)
+            . "Color: " ThisInfo.Color
 }
 MsgBox, % RTrim(MyValues, ",")  ; Show the yellow cells in the specified column. RTrim is to remove the rightmost comma
 return
@@ -52,7 +52,7 @@ class WorkbookInfo
     }
     AddSheet(Nm, Clr)
     {
-        this.Sheets.Push({Name: Nm, Color: Clr})
+        this.Sheets.Push({Name: Nm, Color: Format("0x{:06X}", Clr)})
     }
 }
 
