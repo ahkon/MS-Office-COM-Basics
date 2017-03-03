@@ -16,6 +16,8 @@ xlApp.Visible := true  ; Make the application visible.
 MyWorkbook := xlApp.Workbooks.Open(FilePath, 0, 0)  ; Open the workbook. UpdateLinks:=0, ReadOnly:=0
 
 ; Determine the total range. Get the last cell in that range.
+; Note concerning UsedRange: This script assumes the data starts at cell A1. Otherwise UseRange may produce unexpected
+; results. More info: http://stackoverflow.com/questions/11886284/usedrange-count-counting-wrong/11886420#11886420
 LastRow := MyWorkbook.Sheets(1).UsedRange.Rows.Count  ; Get the number of rows in the used range.
 MyRange := MyWorkbook.Sheets(1).Range("A1:Z" LastRow)  ; Get the range of all cells in columns A-Z in the used range.
 LastCell := MyRange.Cells(MyRange.Cells.Count)  ; The last cell MyRange.
