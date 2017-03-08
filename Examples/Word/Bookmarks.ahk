@@ -15,8 +15,8 @@ MyDocNew.Bookmarks("MyBookmark2").Range.Text := "Aut et magnam quas"
 
 MyDocNew.SaveAs(A_ScriptDir "\Bookmarks.docx")  ; Save the document.
 MsgBox, 64, Document created, A new Word document was created. Press OK to continue.
-MyDocNew.Close() ; Close the document.
-wdApp.Quit() ; Quit Word.
+MyDocNew.Close()  ; Close the document.
+wdApp.Quit()  ; Quit Word.
 return
 
 ; References:
