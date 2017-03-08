@@ -6,7 +6,7 @@ if !FileExist(SelectedFile)
     return
 SplitPath, SelectedFile, SelectedFileName, SecectedFileDir, SelectedFileExtension, SelectedNameNoExt
 xlApp := ComObjCreate("Excel.Application")
-xlApp.VIsible := true
+xlApp.Visible := true
 wbkSource := xlApp.Workbooks.Open(SelectedFile)
 for sht, in wbkSource.Sheets
 {
