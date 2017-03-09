@@ -47,3 +47,4 @@ ToggleSelected() {
 
 ; References
 ;   - https://autohotkey.com/boards/viewtopic.php?p=116938#p116938
+;   - https://autohotkey.com/board/topic/71335-mickers-outlook-com-msdn-for-ahk-l/page-2#entry730111
