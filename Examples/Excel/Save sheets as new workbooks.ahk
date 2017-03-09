@@ -34,3 +34,6 @@ FindFreeName(FileDir, FileName, FileExt)
     }
     return, FilePath
 }
+
+; References
+;   - https://autohotkey.com/boards/viewtopic.php?f=5&t=28963&p=136076#p136076
