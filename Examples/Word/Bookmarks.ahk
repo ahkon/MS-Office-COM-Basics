@@ -20,9 +20,11 @@ wdApp.Quit()  ; Quit Word.
 return
 
 ; References:
-;   - Add a bookmark
-;       https://support.office.com/en-us/article/Add-or-delete-bookmarks-f68d781f-0150-4583-a90e-a4009d99c2a0#bm1
-;   - How to quickly show or hide bookmarks in Word?
-;       https://www.extendoffice.com/documents/word/848-word-show-hide-bookmarks.html
-;   - Working with Bookmarks in VBA
-;       http://word.mvps.org/FAQs/MacrosVBA/WorkWithBookmarks.htm
+;   Add a bookmark
+;       - https://support.office.com/en-us/article/Add-or-delete-bookmarks-f68d781f-0150-4583-a90e-a4009d99c2a0#bm1
+;   How to quickly show or hide bookmarks in Word?
+;       - https://www.extendoffice.com/documents/word/848-word-show-hide-bookmarks.html
+;   Working with Bookmarks in VBA
+;       - http://word.mvps.org/FAQs/MacrosVBA/WorkWithBookmarks.htm
+;   https://autohotkey.com/boards/viewtopic.php?p=84712#p84712
+;   https://autohotkey.com/boards/viewtopic.php?p=84568#p84568
