@@ -10,7 +10,7 @@ MyItems := Inbox.Items  ; Get a collection of items.
 MyItems.Sort("[Received]", true)  ; Sort 'MyItems'.
 
 ; Note: If you do 'MyItems := Inbox.Items' again at this point, it will return a new UNSORTED object. You need to save
-; the reference to the sorted object if you want to keep using it.
+; the reference to the sorted object (MyItems) if you want to keep using it.
  
 for MailItem, in  MyItems
 {
