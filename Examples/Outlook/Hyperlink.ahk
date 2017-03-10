@@ -18,4 +18,4 @@ Doc.Hyperlinks.Add( Sel.Range           ; Anchor
                   , "")                 ; Target
 
 ; References
-;   - Hyperlinks.Add Method (Word) - https://msdn.microsoft.com/en-us/library/office/ff837214.aspx
+;   Hyperlinks.Add Method (Word) - https://msdn.microsoft.com/en-us/library/office/ff837214.aspx
