@@ -1,6 +1,10 @@
 ; This script creates a new word documennt from a template. Then it inserts text into two bookmarks.
 ; The template (Bookmarks.dotx) has two bookmarks named "MyBookmark1" and "MyBookmark2".
 
+; Note: To run this example you will probably need to open the template (Bookmarks.dotx) and click "Enable Editing". Otherwise
+; the file will be displayed in "Protected View" because you downloaded it from the internet, and you will see an error when
+; trying to run this script.
+
 FilePath := A_ScriptDir "\Bookmarks.dotx"  ; .dotx is a Word template, but .doc and .docx will also work.
 wdApp := ComObjCreate("Word.Application")  ; Create an instance of Word.
 
