@@ -13,7 +13,7 @@ Sel := Doc.Windows(1).Selection   ; Get the current selection.
 Doc.Hyperlinks.Add( Sel.Range           ; Anchor
                   , A_ScriptFullPath    ; Address
                   , ""                  ; SubAddress
-                  , "Hello!"            ; ScreenTip
+                  , ""                  ; ScreenTip
                   , "This is a link"    ; TextToDisplay
                   , "")                 ; Target
 
