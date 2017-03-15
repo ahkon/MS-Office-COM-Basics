@@ -23,3 +23,6 @@ else
     s := "Not detected."
 MsgBox, 64, Inspector State, % s
 return
+
+; References
+;   https://autohotkey.com/boards/viewtopic.php?f=5&t=16266
