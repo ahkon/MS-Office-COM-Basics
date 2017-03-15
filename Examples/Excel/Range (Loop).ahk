@@ -3,7 +3,7 @@
 
 xlApp := ComObjActive("Excel.Application")  ; Excel must be running.
 
-MyRange := xlApp.Range("A1:C4")  ; Get the cell at row 2, column 3.
+MyRange := xlApp.Range("A1:C4")  ; Get a Range.
 
 for CurrentCell, in MyRange  ; For each item (cell/range) in 'MyRange'...
 {
