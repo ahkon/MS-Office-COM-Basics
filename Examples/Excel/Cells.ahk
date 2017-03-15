@@ -8,7 +8,6 @@ MyCell := xlApp.Cells(2, 3)  ; Get the cell at row 2, column 3.
 MsgBox, % "The cell at address " MyCell.Address " has a value of '" MyCell.Value 
         . "' and has the text '" MyCell.Text "'."
 
-
 MyRange := xlApp.Range("D3:F5")  ; Get/save a reference to the specified Range.
 SubRng1 := MyRange.Cells(2)  ; Get a cell (range) from within 'MyRange'.
 SubRng2 := MyRange.Cells(2, 1)  ; Get a cell (range) from within 'MyRange'.
