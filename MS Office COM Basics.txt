@@ -208,7 +208,8 @@ for X, in MyCollection      ; for each X in the collection...
     MsgBox, % X.Value       ; display the "Value" property of this X[/code]We can use a [url=http://ahkscript.org/docs/commands/For.htm#COM_Objects]for-loop[/url] to enumerate a collection. Just keep in mind that normal for-loops usually store the value separately from the key: [c]for key, val in obj[/c]. But, COM objects of this type store the value in what would normally be the key: [c]for val, in obj[/c].
 
 [b]More:[/b]
-[list][*][url=https://github.com/ahkon/MS-Office-COM-Basics/blob/master/Examples/Excel/Range%20(Loop).ahk]Range (Loop).ahk[/url][/list]
+[list][*][url=https://github.com/ahkon/MS-Office-COM-Basics/blob/master/Examples/Excel/Range%20(Loop).ahk]Excel - Range (Loop).ahk[/url]
+[*][url=https://github.com/ahkon/MS-Office-COM-Basics/blob/master/Examples/Outlook/Sort%20items.ahk]Outlook - Sort items.ahk[/url][/list]
 [color=#0000BF][size=115]5.3 Saving References[/size][/color]
 Once you have drilled down into an object, you may find it useful to save a reference to a child object. This eliminates the need to "drill down" each time you want to access it. Take this VBA example which changes the font formatting in the active cell. The [i]With[/i] statement signifies that the next two lines will both use [c]ActiveCell.Font[/c].[quote="[url=https://msdn.microsoft.com/en-us/library/office/ff834673.aspx]Application.ActiveCell Property (Excel)[/url]"][code=vb file=Untitled.vb]Worksheets("Sheet1").Activate
 With ActiveCell.Font
