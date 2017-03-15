@@ -1,3 +1,6 @@
+; This script demonstrates several ways to specify a Range. After each example, this script selects the Range and
+; displays a MsgBox. 
+
 ; Note: There is usually no need to Activate/Select a range in order to get or set the value.
 ; Activate/Select is done here for demonstration only -- it demonstrates that a reference to a range has been retrieved.
 ; See 'Copy a range' below for how to copy ranges.
