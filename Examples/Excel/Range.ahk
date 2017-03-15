@@ -2,6 +2,9 @@
 ; Activate/Select is done here for demonstration only -- it demonstrates that a reference to a range has been retrieved.
 ; See 'Copy a range' below for how to copy ranges.
 
+; Constants
+xlPasteValues := -4163
+
 xlApp := ComObjActive("Excel.Application")  ; Excel must be running.
 
 
@@ -51,9 +54,9 @@ MsgBox, % "Cell B1 on worksheet 1 should now contain the same thing as cell C2 o
 ; The following lines will all use sheet 1, so we save a reference to that sheet in the variable 's'.
 s := xlApp.Sheets(1)  ; Save a reference to sheet 1.
 
-s.Range("A1").Value := s.Range("B1").Value   ; Copy the B1 value to A1.
-s.Range("A2").Value := s.Range("B2").Value2  ; Copy the B2 value2 to A2.
-s.Range("A3").Value := s.Range("B3").Text    ; Copy the B3 visible text to A3.
+s.Range("A1").Value := s.Range("B1").Value   ; Assign the B1 value to A1.
+s.Range("A2").Value := s.Range("B2").Value2  ; Assign the B2 value2 to A2.
+s.Range("A3").Value := s.Range("B3").Text    ; Assign the B3 visible text to A3.
 
 ; Copy and paste
 s.Range("B4").Copy                           ; Copy the B4 range.
