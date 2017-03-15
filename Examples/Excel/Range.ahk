@@ -41,7 +41,7 @@ MyRange.Select
 MsgBox, % "The cell " MyRange.Address " should be selected on worksheet '" MyRange.Worksheet.Name "'."
 
 
-; Copy a range
+; Copy a range or values.
 ; Assign cell C2 to cell B1.
 xlApp.Range("B1") := xlApp.Range("C2")
 MsgBox, % "Cell B1 should now contain the same thing as cell C2."
@@ -51,8 +51,6 @@ MsgBox, % "Cell B1 should now contain the same thing as cell C2."
 xlApp.Worksheets(1).Range("B1") := xlApp.Worksheets(2).Range("C2")
 MsgBox, % "Cell B1 on worksheet 1 should now contain the same thing as cell C2 on worksheet 2."
 
-
-; Copy values (no formatting)
 ; The following lines will all use sheet 1, so we save a reference to that sheet in the variable 's'.
 s := xlApp.Sheets(1)  ; Save a reference to sheet 1.
 
@@ -64,5 +62,8 @@ s.Range("A3").Value := s.Range("B3").Text    ; Assign the B3 visible text to A3.
 s.Range("B4").Copy                           ; Copy the B4 range.
 s.Range("A4").PasteSpecial(xlPasteValues)    ; Paste a range from the clipboard into A4.
 
+s.Range("B5").Copy(s.Range("A5"))          ; Copy the range A5 to the range B5. (With formatting)
+
 ; References
 ;   https://fastexcel.wordpress.com/2011/11/30/text-vs-value-vs-value2-slow-text-and-how-to-avoid-it/
+;   Range.Copy Method (Excel) - https://msdn.microsoft.com/en-us/library/office/ff837760.aspx
