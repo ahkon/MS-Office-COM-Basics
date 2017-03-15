@@ -18,3 +18,6 @@ MsgBox, % "The cell at address " SubRng1.Address " has a value of '" SubRng1.Val
         . "' and has the text '" SubRng1.Text "'."
 MsgBox, % "The cell at address " SubRng2.Address " has a value of '" SubRng2.Value
         . "' and has the text '" SubRng2.Text "'."
+
+; References
+;   Range.Cells Property (Excel) - https://msdn.microsoft.com/en-us/library/office/ff196273.aspx
