@@ -126,9 +126,9 @@ return                                              ; End of Auto-execute sectio
 
 F4::                                                ; F4 hotkey
 if IsObject(xlApp.Range("A1").Comment)              ; Did 'Range.Comment' return an object? 
-	xlApp.Range("A1").Comment.Text("Hello world!")  ; Change the comment text
+    xlApp.Range("A1").Comment.Text("Hello world!")  ; Change the comment text
 else
-	xlApp.Range("A1").AddComment("Hello world!")    ; Add a comment
+    xlApp.Range("A1").AddComment("Hello world!")    ; Add a comment
 return[/code]In practice, hard-coding cell A1 into a script is probably not desirable. If we replaced [c]Range("A1")[/c] with [c][url=https://msdn.microsoft.com/en-us/library/office/ff834673.aspx]ActiveCell[/url][/c] our script would be a lot more useful. Note: [c]Range("A1")[/c] and [c]ActiveCell[/c] both return a [url=https://msdn.microsoft.com/en-us/library/office/ff838238.aspx]Range[/url] object, which is why they are interchangeable here.
 
 [color=#0000BF][size=115]4.3 Events[/size][/color]
@@ -146,10 +146,10 @@ To listen for a COM object's events we will need to do two things: [list=1][*]De
 Now that we have defined our function, we can connect it to a COM object. The NewDocument event docs tell us it is fired by an [i]Application[/i] object. So we need to pass an [i]Application[/i] object to ComObjConnect. We used [i]wd_[/i] as the prefix when defining our function, so that's what we will pass as the [i]Prefix [/i]parameter.
 
 Our basic working example can be:[code]#Persistent
-wdApp := ComObjCreate("Word.Application")      	; Create an application object
-wdApp.Visible := true							; Make the application visible
+wdApp := ComObjCreate("Word.Application")       ; Create an application object
+wdApp.Visible := true                           ; Make the application visible
 ComObjConnect(wdApp, "wd_")                     ; Connect to the application's events
-return   										; End of Auto-execute section
+return                                          ; End of Auto-execute section
 
 wd_NewDocument(Doc, App)                        ; This function responds to Word's 'NewDocument' event
 {
@@ -169,16 +169,16 @@ wd_Quit(App)                                    ; This function responds to Word
 This has been fixed in AHK v1.1.24.02+
 [quote="[url=https://autohotkey.com/boards/viewtopic.php?p=113049#p113049]v1.1.24.02[/url]"]Fixed ComObject to suppress any errors raised by [url=https://autohotkey.com/docs/commands/ComObjConnect.htm]disconnection of events[/url] after the script has released the object.[/quote][/spoiler]
 [b]NewDocument Event (Word) Example - Class Version[/b]: The ComObjConnect docs page contains a small note with some interesting implications:[quote="[url=http://ahkscript.org/docs/commands/ComObjConnect.htm]ComObjConnect()[/url]"][color=#909090][v1.1.01+][/color]: This parameter can be an object defined by the script. When an event is raised, the corresponding method is called. The first parameter, which is usually the hidden [c]this[/c] parameter, refers to the script-defined object, not the COM object. To catch all events without defining a method for each one, define a [url=http://ahkscript.org/docs/Objects.htm#Meta_Functions]__Call meta-function[/url].[/quote]Basically this means that instead of passing a String prefix to ComObjConnect, we can pass it an instance of an AHK class. Instead of calling a function, it will call the class methods. And defining a __Call meta-function will allow us to respond to all events without defining a method first.[code]#Persistent
-wdApp := ComObjCreate("Word.Application")      	; Create an application object
-wdApp.Visible := true							; Make the application visible
-ComObjConnect(wdApp, new EventsClass)			; Connect to the application's events
-return   										; End of Auto-execute section
+wdApp := ComObjCreate("Word.Application")       ; Create an application object
+wdApp.Visible := true                           ; Make the application visible
+ComObjConnect(wdApp, new EventsClass)           ; Connect to the application's events
+return                                          ; End of Auto-execute section
 
 class EventsClass
 {
     __Call(Event, Args*)
     {
-        if !IsFunc(this[Event])					; If this event does not correspond to a method
+        if !IsFunc(this[Event])                 ; If this event does not correspond to a method
             ToolTip, % Event
     }
     NewDocument(Doc, App)
@@ -190,7 +190,7 @@ class EventsClass
     Quit(App)
     {
         MsgBox, % App.Name
-        ComObjConnect(App)						; Disconnect from App events
+        ComObjConnect(App)                      ; Disconnect from App events
         ExitApp                                 ; Exit this script
     }
 }[/code]
@@ -207,6 +207,8 @@ MyCollection := MyApp.Xs    ; Xs is a property belonging to the application obje
 for X, in MyCollection      ; for each X in the collection...
     MsgBox, % X.Value       ; display the "Value" property of this X[/code]We can use a [url=http://ahkscript.org/docs/commands/For.htm#COM_Objects]for-loop[/url] to enumerate a collection. Just keep in mind that normal for-loops usually store the value separately from the key: [c]for key, val in obj[/c]. But, COM objects of this type store the value in what would normally be the key: [c]for val, in obj[/c].
 
+[b]Examples:[/b]
+[list][*][url=https://github.com/ahkon/MS-Office-COM-Basics/blob/master/Examples/Excel/Range%20(Loop).ahk]Range (Loop).ahk[/url][/list]
 [color=#0000BF][size=115]5.3 Saving References[/size][/color]
 Once you have drilled down into an object, you may find it useful to save a reference to a child object. This eliminates the need to "drill down" each time you want to access it. Take this VBA example which changes the font formatting in the active cell. The [i]With[/i] statement signifies that the next two lines will both use [c]ActiveCell.Font[/c].[quote="[url=https://msdn.microsoft.com/en-us/library/office/ff834673.aspx]Application.ActiveCell Property (Excel)[/url]"][code=vb file=Untitled.vb]Worksheets("Sheet1").Activate
 With ActiveCell.Font
@@ -258,11 +260,12 @@ To search for for VBA examples, include a brief task description and the name of
 [*][url=http://www.vbforums.com/showthread.php?405047-Classic-VB-Why-is-TRUE-equal-to-1-and-not-1]Why is TRUE equal to -1 and not 1[/url]
 [*][url=http://tinyurl.com/otdll6v]Microsoft Technet script repository[/url][/list]
 [color=#0000BF][size=115]6.2 Examples[/size][/color]
-[list][*][url=https://autohotkey.com/boards/viewtopic.php?t=16270]Events - change the value of a ByRef parameter[/url]
-[*][url=https://autohotkey.com/boards/viewtopic.php?p=112648#p112648]Excel - Get the value of cells in a column one by one[/url]
+[list][*][url=https://autohotkey.com/boards/viewtopic.php?p=112648#p112648]Excel - Get the value of cells in a column one by one[/url]
 [*][url=https://autohotkey.com/boards/viewtopic.php?p=119422#p119422]Excel - Import data from a text file[/url] ([c][url=https://msdn.microsoft.com/en-us/library/office/ff837764.aspx]QueryTables.Add[/url][/c]). This is a 1:1 translation of VBA code generated by the Excel Macro Recorder.
 [*][url=https://autohotkey.com/boards/viewtopic.php?p=84712#p84712]Word - Create a document from a template and insert script-generated text[/url] (using bookmarks). The text formatting of the template is preserved.
-[*][url=https://autohotkey.com/boards/viewtopic.php?p=51275#p51275]Word - Find and replace anywhere[/url] (In headers, textboxes, etc.). This is a 1:1 translation of [url=http://word.mvps.org/faqs/customization/ReplaceAnywhere.htm]this[/url] VBA sub.[/list]
+[*][url=https://autohotkey.com/boards/viewtopic.php?p=51275#p51275]Word - Find and replace anywhere[/url] (In headers, textboxes, etc.). This is a 1:1 translation of [url=http://word.mvps.org/faqs/customization/ReplaceAnywhere.htm]this[/url] VBA sub.
+[*][url=https://autohotkey.com/boards/viewtopic.php?t=16270]Events - change the value of a ByRef parameter[/url]
+[*][url=https://github.com/ahkon/MS-Office-COM-Basics/tree/master/Examples]More on github...[/url][/list]
 [color=#0000BF][size=115]6.3 Tutorials[/size][/color]
 [list][*][url=http://www.autohotkey.com/board/topic/69033-basic-ahk-l-com-tutorial-for-excel/]Basic Ahk_L COM Tutorial for Excel[/url]
 [*][url=http://www.autohotkey.com/board/topic/71335-mickers-outlook-com-msdn-for-ahk-l/]Mickers Outlook COM MSDN[/url][/list]
