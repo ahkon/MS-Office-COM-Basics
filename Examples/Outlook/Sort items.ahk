@@ -24,5 +24,6 @@ for MailItem, in  MyItems
 }
 
 ; References:
-;   - https://autohotkey.com/board/topic/71335-mickers-outlook-com-msdn-for-ahk-l/page-3#entry733202
-;   - https://social.msdn.microsoft.com/Forums/office/en-US/986a7325-4d2c-4c91-8a0e-f4a4b880b7a0/mailitem-collection-order-for-a-folder?forum=outlookdev
+;   https://autohotkey.com/board/topic/71335-mickers-outlook-com-msdn-for-ahk-l/page-3#entry733202
+;   https://social.msdn.microsoft.com/Forums/office/en-US/986a7325-4d2c-4c91-8a0e-f4a4b880b7a0/mailitem-collection-order-for-a-folder?forum=outlookdev
+;   https://msdn.microsoft.com/en-us/library/office/microsoft.office.interop.outlook._explorer.addtoselection.aspx#Anchor_1
