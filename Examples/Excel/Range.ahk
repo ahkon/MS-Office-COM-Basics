@@ -65,7 +65,7 @@ s.Range("A3").Value := s.Range("B3").Text    ; Assign the B3 visible text to A3.
 s.Range("B4").Copy                           ; Copy the B4 range.
 s.Range("A4").PasteSpecial(xlPasteValues)    ; Paste a range from the clipboard into A4.
 
-s.Range("B5").Copy(s.Range("A5"))          ; Copy the range B5 to the range A5. (With formatting)
+s.Range("B5").Copy(s.Range("A5"))            ; Copy the range B5 to the range A5. (With formatting)
 
 ; References
 ;   https://fastexcel.wordpress.com/2011/11/30/text-vs-value-vs-value2-slow-text-and-how-to-avoid-it/
