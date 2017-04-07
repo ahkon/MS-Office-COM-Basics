@@ -11,9 +11,9 @@ xlApp := ComObjActive("Excel.Application")  ; Get a reference to the running ins
 cellValue := xlApp.ActiveCell.Offset(0, 1).Value
 
 ; Save a reference to "Sheet2". Specify the sheet name (ex: "Sheet2") or number (ex: 2).
-xlSht1 := xlApp.ActiveWorkbook.Sheets(2)
+MySht := xlApp.ActiveWorkbook.Sheets(2)
 
-FoundCell := xlSht1.Range("B:B").Find(cellValue,, xlValues, xlWhole)
+FoundCell := MySht.Range("B:B").Find(cellValue,, xlValues, xlWhole)
 
 if (FoundCell)
 {
