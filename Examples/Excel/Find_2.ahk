@@ -13,7 +13,7 @@ cellValue := xlApp.ActiveCell.Offset(0, 1).Value
 ; Save a reference to "Sheet2". Specify the sheet name (ie: "Sheet2") or number (ie: 2).
 xlSht1 := xlApp.ActiveWorkbook.Sheets(2)
 
-FoundCell := xlSht1.Range("B:B").Find(cellValue)
+FoundCell := xlSht1.Range("B:B").Find(cellValue,, xlValues, xlWhole)
 
 if (FoundCell)
 {
@@ -27,3 +27,4 @@ return
 
 ; References
 ; https://autohotkey.com/boards/viewtopic.php?f=5&t=30239
+; Range.Find Method (Excel) - https://msdn.microsoft.com/en-us/library/office/ff839746.aspx
