@@ -10,7 +10,7 @@ xlApp := ComObjActive("Excel.Application")  ; Get a reference to the running ins
 ; Get the value to the right of the active cell. This is the value that we will search for on the other sheet.
 cellValue := xlApp.ActiveCell.Offset(0, 1).Value
 
-; Save a reference to "Sheet2". Specify the sheet name (ie: "Sheet2") or number (ie: 2).
+; Save a reference to "Sheet2". Specify the sheet name (ex: "Sheet2") or number (ex: 2).
 xlSht1 := xlApp.ActiveWorkbook.Sheets(2)
 
 FoundCell := xlSht1.Range("B:B").Find(cellValue,, xlValues, xlWhole)
