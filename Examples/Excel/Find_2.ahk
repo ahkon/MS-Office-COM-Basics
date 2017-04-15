@@ -27,4 +27,5 @@ return
 
 ; References
 ; https://autohotkey.com/boards/viewtopic.php?f=5&t=30239
+; https://autohotkey.com/boards/viewtopic.php?f=5&t=30577
 ; Range.Find Method (Excel) - https://msdn.microsoft.com/en-us/library/office/ff839746.aspx
