@@ -25,3 +25,8 @@ return
 
 ; References
 ;   https://autohotkey.com/boards/viewtopic.php?f=5&t=30676
+;   Document.StoryRanges - https://msdn.microsoft.com/en-us/library/office/ff197823.aspx
+;   Range.InsertAfter - https://msdn.microsoft.com/en-us/library/office/ff192427.aspx
+;   Document.Range - https://msdn.microsoft.com/en-us/library/office/ff821608.aspx
+;   Range.End - https://msdn.microsoft.com/en-us/library/office/ff840998.aspx
+;   Range.Paste - https://msdn.microsoft.com/en-us/library/office/ff845105.aspx
