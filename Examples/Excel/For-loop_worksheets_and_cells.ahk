@@ -2,7 +2,7 @@
 ; column A. It then loops through each cell in the Range from A1 to the last cell.
 
 ; Constants
- xlUp := -4162
+xlUp := -4162
 
 Path := A_Desktop "\Test.xlsx"  ; The location of the workbook to use for this example.
 MyApp := ComObjCreate("Excel.Application")  ; Create an instance of Excel.
