@@ -24,7 +24,7 @@ for MyWorksheet, in MyWorkbook.Worksheets  ; For each worksheet in the workbook.
     ;~ LastRow := MyWorksheet.UsedRange.rows.count
     
     ; This is another way to make the for-loop. A bit clumsier IMO than using Range references as shown below.
-    ;~ for c, in MyWorksheet.Range("A1:A" LastRow)
+    ;~ for MyCell, in MyWorksheet.Range("A1:A" LastRow)
     
     for MyCell, in MyWorksheet.Range(CellA1, LastCell)  ; For each cell in the Range...
     {
