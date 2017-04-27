@@ -13,7 +13,7 @@ for MyWorksheet, in MyWorkbook.Worksheets  ; For each worksheet in the workbook.
 {
     SheetNumber := A_Index
     
-    CellA1 := MyWorksheet.Cells(1, 1)  ; Get a reference to Cell A1 on this (MyWorksheet) sheet.
+    CellA1 := MyWorksheet.Cells(1, 1)  ; Get a reference to Cell A1 on this sheet (MyWorksheet).
     
     ; Starting at the last cell in column A. ie: .Cells(MyApp.Rows.Count, 1)
     ; Look 'upwards' for a non-blank cell. ie: .End(xlUp)
