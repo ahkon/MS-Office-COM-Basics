@@ -21,7 +21,7 @@ for MyWorksheet, in MyWorkbook.Worksheets  ; For each worksheet in the workbook.
     LastCell := MyWorksheet.Cells(MyApp.Rows.Count, 1).End(xlUp)
     
     ; This is another way to get the last row. UsedRange has some weird quirks though.
-    ;~ LastRow := MyWorksheet.UsedRange.rows.count
+    ;~ LastRow := MyWorksheet.UsedRange.Rows.Count
     
     ; This is another way to make the for-loop. A bit clumsier IMO than using Range references as shown below.
     ;~ for MyCell, in MyWorksheet.Range("A1:A" LastRow)
