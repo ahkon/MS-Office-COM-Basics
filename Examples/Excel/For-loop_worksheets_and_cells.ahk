@@ -4,7 +4,7 @@
 ; Constants
  xlUp := -4162
 
-Path := A_Desktop "\test2.xlsx"  ; The location of the workbook to use for this example.
+Path := A_Desktop "\Test.xlsx"  ; The location of the workbook to use for this example.
 MyApp := ComObjCreate("Excel.Application")  ; Create an instance of Excel.
 MyApp.Visible := true  ; Make Excel visible.
 MyWorkbook := MyApp.Workbooks.Open(Path)  ; Open the workbook specified by 'Path'.
