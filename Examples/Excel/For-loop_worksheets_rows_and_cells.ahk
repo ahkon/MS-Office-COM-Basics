@@ -1,6 +1,6 @@
 ; This script opens a workbook and then loops through each sheet. Within each sheet, it finds the last non-blank cell in
 ; column A. It then loops through each row in the Range from A1 to the last row. Within each row, it loops through each
-; cell in the row starting at column A and going until the last non-blank cell in the column.
+; cell in the row starting at column A and going until the last non-blank cell in the row.
 
 ; Constants
 xlToLeft := -4159
