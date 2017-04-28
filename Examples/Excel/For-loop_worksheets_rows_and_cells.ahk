@@ -19,7 +19,7 @@ for MySheet, in MyWorkbook.Worksheets  ; For each worksheet in the workbook...
     
     ; Starting at the last cell in column A. ie: .Cells(MyApp.Rows.Count, 1)
     ; Look 'upwards' for a non-blank cell. ie: .End(xlUp)
-    ; 'LastCell' will contain a reference to the Range object representing the cell.
+    ; 'LastCellColumn' will contain a reference to the Range object representing the cell.
     LastCellColumn := MySheet.Cells(MyApp.Rows.Count, 1).End(xlUp)
     
     for MyCellColA, in MySheet.Range(CellA1, LastCellColumn)  ; For each cell in column A...
