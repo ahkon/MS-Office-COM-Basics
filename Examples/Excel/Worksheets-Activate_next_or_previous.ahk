@@ -12,7 +12,7 @@ F8::
     Wbk.Worksheets(++Idx).Activate  ; Add 1 to 'Idx' and activate the specified sheet.
 return
 
-; F7 hotkey to activate the previous sheet. Similar logic as the F8 hotkey above, only condensed.
+; F7 hotkey to activate the previous sheet. Similar logic to the F8 hotkey above, only condensed.
 F7::(Wbk := ComObjActive("Excel.Application").ActiveWorkbook).Worksheets((Idx := Wbk.ActiveSheet.Index) = 1 
     ? Wbk.Worksheets.Count : Idx - 1).Activate
 
