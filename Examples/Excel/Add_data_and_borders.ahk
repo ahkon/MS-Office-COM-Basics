@@ -1,4 +1,5 @@
-; This script copies data from an example object into Excel.
+; This script copies example data from an object into a SafeArray and then from the SafeArray into Excel. Additional
+; formatting is added such as bold text, column widths and borders.
 
 ; Constants
 msoTrue := -1
@@ -28,10 +29,11 @@ WrkBk := xlApp.Workbooks.Add                ; Create a new workbook object and s
 ; a blank row, user and date.
 SafeArray := ComObjArray(12, ExObj.MaxIndex() + 4, 3)
 
-; Headings
+; Put data into the SafeArray. These items will eventually be in cells A1, B1 and A2.
 SafeArray[0, 0] := "User:", SafeArray[0, 1] := A_UserName
 SafeArray[1, 0] := "Date:"
 
+; Headings. Cells A3, B3 and C3.
 SafeArray[3, 0] := "Quantity"
 SafeArray[3, 1] := "Item"
 SafeArray[3, 2] := "Code"
@@ -49,7 +51,7 @@ TotalRange.Value := SafeArray  ; Copy the SafeArray into the range.
 xlApp.Worksheets(1).Range("B2").NumberFormat := "@"  ; NumberFormat @=Text
 xlApp.Worksheets(1).Range("B2").Value := A_MMMM " " A_DD ", " A_YYYY
 
-; Headings (A1:A2 and A4:C4): format borders, bold
+; Headings. A1:A2 and A4:C4. Format borders, bold.
 ThisRange := xlApp.Worksheets(1).Range("A1:A2")
 ThisRange.Font.Bold := msoTrue
 ThisRange.HorizontalAlignment := xlRight
