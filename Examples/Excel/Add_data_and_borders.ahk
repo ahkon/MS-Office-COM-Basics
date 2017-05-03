@@ -19,7 +19,7 @@ ExObj := [ {Quantity: 2, Item: "Abc", Code: "asdf1234"}
          , {Quantity: 5, Item: "Lmn", Code: "qwer3456"}
          , {Quantity: 7, Item: "Opq", Code: "dfgh4567"} ]
 
-; Open Excel, input the list of error items, and format for printing.
+; Open Excel, input the list of items and format for printing.
 xlApp := ComObjCreate("Excel.Application")  ; Create an Excel Application object and save a reference to it.
 WrkBk := xlApp.Workbooks.Add                ; Create a new workbook object and save a reference to it.
 
