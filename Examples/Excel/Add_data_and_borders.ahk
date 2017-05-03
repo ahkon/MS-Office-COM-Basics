@@ -55,7 +55,6 @@ xlApp.Worksheets(1).Range("B2").NumberFormat := "@"  ; NumberFormat @=Text
 xlApp.Worksheets(1).Range("B2").Value := A_MMMM " " A_DD ", " A_YYYY
 
 ; Cells A1:A2. Bold and align to the right. 
-
 ThisRange := xlApp.Worksheets(1).Range("A1:A2")
 ThisRange.Font.Bold := msoTrue
 ThisRange.HorizontalAlignment := xlRight
