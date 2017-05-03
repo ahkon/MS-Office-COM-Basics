@@ -24,7 +24,7 @@ xlApp := ComObjCreate("Excel.Application")  ; Create an Excel Application object
 WrkBk := xlApp.Workbooks.Add                ; Create a new workbook object and save a reference to it.
 
 ; Create a SafeArray containing the proper amount of rows and columns. 4 extra rows are added for the column headings,
-; user and date.
+; a blank row, user and date.
 SafeArray := ComObjArray(12, ExObj.MaxIndex() + 4, 3)
 
 ; Headings
