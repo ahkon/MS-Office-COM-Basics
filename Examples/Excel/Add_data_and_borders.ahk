@@ -45,7 +45,7 @@ BotRightCell := xlApp.Worksheets(1).Cells(ExObj.MaxIndex() + 4, 3)  ; Bot. right
 TotalRange := xlApp.Range(TopLeftCell, BotRightCell)
 TotalRange.Value := SafeArray  ; Copy the SafeArray into the range.
 
-xlApp.Worksheets(1).Range("B2").NumberFormat := "@"	; NumberFormat @=Text
+xlApp.Worksheets(1).Range("B2").NumberFormat := "@"  ; NumberFormat @=Text
 xlApp.Worksheets(1).Range("B2").Value := A_MMMM " " A_DD ", " A_YYYY
 
 ; Format: Borders, Bold
