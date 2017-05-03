@@ -12,6 +12,7 @@ xlInsideHorizontal := 12
 xlInsideVertical := 11
 xlMedium := -4138
 xlRight := -4152
+xlThin := 2
 
 ; The example object. 
 ExObj := [ {Quantity: 2, Item: "Abc", Code: "asdf1234"}
@@ -76,7 +77,7 @@ ThisRange := xlApp.Range(TopLeftCell, BotRightCell)
 ThisRange.Borders(xlInsideVertical).LineStyle := xlContinuous
 ThisRange.Borders(xlInsideVertical).Weight := xlMedium
 ThisRange.Borders(xlInsideHorizontal).LineStyle := xlContinuous
-ThisRange.Borders(xlInsideHorizontal).Weight := xlThin := 2
+ThisRange.Borders(xlInsideHorizontal).Weight := xlThin
 for i, Const in [xlEdgeLeft, xlEdgeTop, xlEdgeBottom, xlEdgeRight] {
     ThisRange.Borders(Const).LineStyle := xlContinuous
     ThisRange.Borders(Const).Weight := xlMedium
