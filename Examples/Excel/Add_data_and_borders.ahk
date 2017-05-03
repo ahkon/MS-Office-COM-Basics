@@ -21,8 +21,8 @@ ExObj := [ [2, "Abc", "asdf1234"]
          , [5, "Lmn", "qwer3456"]
          , [7, "Opq", "dfgh4567"] ]
 
-xlApp := ComObjCreate("Excel.Application")  ; Create an Excel Application object and save a reference to it.
-WrkBk := xlApp.Workbooks.Add                ; Create a new workbook object and save a reference to it.
+xlApp := ComObjCreate("Excel.Application")  ; Create an Excel Application object.
+WrkBk := xlApp.Workbooks.Add                ; Create a new workbook object.
 
 ; Create a SafeArray containing the proper amount of rows and columns. 4 extra rows are added for the column headings,
 ; a blank row, user and date.
