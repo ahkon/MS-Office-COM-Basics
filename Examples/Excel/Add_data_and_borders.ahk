@@ -65,7 +65,7 @@ for i, Const in [xlEdgeLeft, xlEdgeTop, xlEdgeBottom, xlEdgeRight] {
 
 ; Set column widths.
 for i, Col in [1, 3] {
-    TopLeftCell := xlApp.Worksheets(1).Cells(4, Col)  ; Do not include rows 1-3.
+    TopLeftCell := xlApp.Worksheets(1).Cells(4, Col)
     BotRightCell := TopLeftCell.End(xlDown)
     xlApp.Worksheets(1).Range(TopLeftCell, BotRightCell).Columns.AutoFit
 }
