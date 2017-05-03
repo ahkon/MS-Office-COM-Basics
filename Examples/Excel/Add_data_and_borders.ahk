@@ -91,7 +91,10 @@ for i, Const in [xlEdgeLeft, xlEdgeTop, xlEdgeBottom, xlEdgeRight] {
     ThisRange.Borders(Const).Weight := xlMedium
 }
 
+; Show Excel. If the script encounters an error before Excel is visible but after ComObjCreate, Excel will need to be 
+; closed from the Windows Task Manager.
 xlApp.Visible := true
+
 TotalRange.Select
 WrkBk.Saved := msoTrue
 WrkBk.PrintPreview(msoTrue)
