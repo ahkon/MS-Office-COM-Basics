@@ -21,7 +21,6 @@ ExObj := [ [2, "Abc", "asdf1234"]
          , [5, "Lmn", "qwer3456"]
          , [7, "Opq", "dfgh4567"] ]
 
-; Open Excel, input the list of items and format for printing.
 xlApp := ComObjCreate("Excel.Application")  ; Create an Excel Application object and save a reference to it.
 WrkBk := xlApp.Workbooks.Add                ; Create a new workbook object and save a reference to it.
 
