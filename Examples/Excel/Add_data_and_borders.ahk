@@ -49,7 +49,7 @@ TotalRange.Value := SafeArray  ; Copy the SafeArray into the range.
 xlApp.Worksheets(1).Range("B2").NumberFormat := "@"  ; NumberFormat @=Text
 xlApp.Worksheets(1).Range("B2").Value := A_MMMM " " A_DD ", " A_YYYY
 
-; Format: Borders, Bold
+; Headings (A1:A2 and A4:C4): format borders, bold
 ThisRange := xlApp.Worksheets(1).Range("A1:A2")
 ThisRange.Font.Bold := msoTrue
 ThisRange.HorizontalAlignment := xlRight
@@ -71,6 +71,7 @@ for i, Col in [1, 3] {
 }
 xlApp.Worksheets(1).Columns("B:B").ColumnWidth := 40  ; Fixed width column.
 
+; More borders
 TopLeftCell := xlApp.Worksheets(1).Cells(5, 1)
 BotRightCell := xlApp.Worksheets(1).Cells(ExObj.MaxIndex() + 4, 3)
 ThisRange := xlApp.Range(TopLeftCell, BotRightCell)
