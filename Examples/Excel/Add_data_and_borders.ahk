@@ -59,7 +59,7 @@ ThisRange := xlApp.Worksheets(1).Range("A1:A2")
 ThisRange.Font.Bold := msoTrue
 ThisRange.HorizontalAlignment := xlRight
 
-;Cells A4:C4. Bold and add borders.
+; Cells A4:C4. Bold and add borders.
 ThisRange := xlApp.Worksheets(1).Range("A4:C4")
 ThisRange.Font.Bold := msoTrue
 ThisRange.Borders(xlInsideVertical).LineStyle := xlContinuous
