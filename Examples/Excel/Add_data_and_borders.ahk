@@ -16,10 +16,10 @@ xlRight := -4152
 xlThin := 2
 
 ; The example object. 
-ExObj := [ {Quantity: 2, Item: "Abc", Code: "asdf1234"}
-         , {Quantity: 3, Item: "Xyz", Code: "zxcv2345"} 
-         , {Quantity: 5, Item: "Lmn", Code: "qwer3456"}
-         , {Quantity: 7, Item: "Opq", Code: "dfgh4567"} ]
+ExObj := [ [2, "Abc", "asdf1234"]
+         , [3, "Xyz", "zxcv2345"] 
+         , [5, "Lmn", "qwer3456"]
+         , [7, "Opq", "dfgh4567"] ]
 
 ; Open Excel, input the list of items and format for printing.
 xlApp := ComObjCreate("Excel.Application")  ; Create an Excel Application object and save a reference to it.
@@ -40,11 +40,14 @@ SafeArray[3, 2] := "Code"
 
 ; Insert the items from ExObj into the SafeArray.
 for RowNumber, Row in ExObj
-    for FieldName, FieldValue in Row
+    for FieldNumber, FieldValue in Row
         SafeArray[RowNumber + 3, A_Index - 1] := FieldValue
 
 TopLeftCell := xlApp.Worksheets(1).Cells(1, 1)  ; The top left cell where the data will be inserted.
-BotRightCell := xlApp.Worksheets(1).Cells(ExObj.MaxIndex() + 4, 3)  ; Bot. right cell where the data will be inserted.
+
+; Bot. right cell where the data will be inserted.
+BotRightCell := xlApp.Worksheets(1).Cells(ExObj.MaxIndex() + 4, ExObj.1.MaxIndex())
+
 TotalRange := xlApp.Range(TopLeftCell, BotRightCell)
 TotalRange.Value := SafeArray  ; Copy the SafeArray into the range.
 
@@ -75,7 +78,7 @@ xlApp.Worksheets(1).Columns("B:B").ColumnWidth := 40  ; Fixed width column.
 
 ; More borders
 TopLeftCell := xlApp.Worksheets(1).Cells(5, 1)
-BotRightCell := xlApp.Worksheets(1).Cells(ExObj.MaxIndex() + 4, 3)
+BotRightCell := xlApp.Worksheets(1).Cells(ExObj.MaxIndex() + 4, ExObj.1.MaxIndex())
 ThisRange := xlApp.Range(TopLeftCell, BotRightCell)
 ThisRange.Borders(xlInsideVertical).LineStyle := xlContinuous
 ThisRange.Borders(xlInsideVertical).Weight := xlMedium
