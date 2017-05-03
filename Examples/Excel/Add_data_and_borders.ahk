@@ -92,7 +92,8 @@ for i, Const in [xlEdgeLeft, xlEdgeTop, xlEdgeBottom, xlEdgeRight] {
 }
 
 ; Show Excel. If the script encounters an error before Excel is visible but after ComObjCreate, Excel will need to be 
-; closed from the Windows Task Manager. So move this line to the top of the script when testing.
+; closed from the Windows Task Manager. So move this line to directly following ComObjCreate when making changes to this 
+; script.
 xlApp.Visible := true
 
 TotalRange.Select
