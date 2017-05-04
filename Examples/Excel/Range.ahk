@@ -23,8 +23,8 @@ MsgBox, % "The range " MyRange.Address " should be selected. This range contains
 
 ; Same as the above line, except this uses cell references instead of a string.
 ; ie: xlApp.Range(TopLeftCell, BotRightCell)
-;   TopLeftCell - an AHK variable containing a reference to a cell.
-;   BotRightCell - an AHK variable containing a reference to a cell.
+;   TopLeftCell - an AHK variable containing a reference to a Range object.
+;   BotRightCell - an AHK variable containing a reference to a Range object.
 MyRange := xlApp.Range(xlApp.Range("C2"), xlApp.Range("E6"))  ; Get a range object representing cells C2 to E6.
 MyRange.Select
 MsgBox, % "The range " MyRange.Address " should be selected. This range contains " MyRange.Rows.Count
