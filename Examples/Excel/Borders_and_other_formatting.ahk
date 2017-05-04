@@ -1,5 +1,5 @@
-; This script copies example data from an object into a SafeArray and then from the SafeArray into Excel. Additional
-; formatting is added such as bold text, column widths and borders.
+; This script copies example data from an object into a SafeArray. The SafeArray is then assigned to a Range in Excel.
+; Some formatting is then added such as bold text, column widths and borders.
 
 ; Constants
 msoTrue := -1
