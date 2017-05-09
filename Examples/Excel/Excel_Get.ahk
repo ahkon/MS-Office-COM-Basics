@@ -15,7 +15,7 @@ Excel_Get(WinTitle="ahk_class XLMAIN", Excel7#:=1) {
         if !(ErrorLevel) {
             window := Acc_ObjectFromWindow(hwnd, -16)
             if ComObjType(window) = 9
-                while Not xl
+                while !xl
                     try xl := window.application
                     catch e
                         if SubStr(e.message,1,10) = "0x80010001"
