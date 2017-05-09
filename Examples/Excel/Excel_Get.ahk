@@ -29,15 +29,14 @@ Excel_Get(WinTitle="ahk_class XLMAIN", Excel7#:=1) {
 
 Acc_ObjectFromWindow(hWnd, idObject = 0) {
     Acc_Init()
-    If	DllCall("oleacc\AccessibleObjectFromWindow", "Ptr", hWnd, "UInt", idObject&=0xFFFFFFFF, "Ptr", -VarSetCapacity(IID,16)+NumPut(idObject==0xFFFFFFF0?0x46000000000000C0:0x719B3800AA000C81,NumPut(idObject==0xFFFFFFF0?0x0000000000020400:0x11CF3C3D618736E0,IID,"Int64"),"Int64"), "Ptr*", pacc)=0 {
+    If DllCall("oleacc\AccessibleObjectFromWindow", "Ptr", hWnd, "UInt", idObject&=0xFFFFFFFF, "Ptr", -VarSetCapacity(IID,16)+NumPut(idObject==0xFFFFFFF0?0x46000000000000C0:0x719B3800AA000C81,NumPut(idObject==0xFFFFFFF0?0x0000000000020400:0x11CF3C3D618736E0,IID,"Int64"),"Int64"), "Ptr*", pacc)=0
         return ComObject(9, pacc, 1), ObjAddRef(pacc)
-    }
 }
 
 Acc_Init() {
-	Static	h
-	If Not	h
-		h:=DllCall("LoadLibrary","Str","oleacc","Ptr")
+    static h
+    If !(h)
+        h:=DllCall("LoadLibrary","Str","oleacc","Ptr")
 }
 
 ; References
