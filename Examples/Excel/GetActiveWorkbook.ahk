@@ -28,7 +28,7 @@ Esc::ExitApp  ; Excape hotkey. Press to exit this script.
 ; Returns the active Excel workbook. If Excel is not active or if Excel is in edit-mode, this function returns blank.
 GetActiveWorkbook()
 {
-    ; Sometimes AHk reports a blank Wintitle/class/exe. Brief testing shows this happens when more than one Excel 
+    ; Sometimes AHK reports a blank Wintitle/class/exe. Brief testing shows this happens when more than one Excel 
     ; application is open. If no hwnd exists for the active window, this attempts to activate Excel.
     if !(WinHwnd := WinExist("A"))  
     {
@@ -51,7 +51,7 @@ GetActiveWorkbook()
 ; http://ahkscript.org/boards/viewtopic.php?f=6&t=6494
 ; <Paste the GetActiveObjects function definition here>
 
-; References
+; References:
 ;   Quirks of ComObjActive - https://autohotkey.com/boards/viewtopic.php?p=134048#p134048
 ;   Is a given workbook open? - https://autohotkey.com/boards/viewtopic.php?p=116315#p116315
 ;   Excel_Get - https://autohotkey.com/board/topic/88337-ahk-failure-with-excel-get/?p=560328
