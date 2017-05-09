@@ -23,7 +23,6 @@ F8::  ; F8 Hotkey. Press to display the full list of objects that GetActiveObjec
     MsgBox %list%
 return
 
-
 Esc::ExitApp  ; Excape hotkey. Press to exit this script.
 
 ; Returns the active Excel workbook. If Excel is not active or if Excel is in edit-mode, this function returns blank.
