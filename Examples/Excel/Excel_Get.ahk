@@ -14,10 +14,10 @@ Excel_Get(WinTitle:="ahk_class XLMAIN", Excel7#:=1) {
     static h := DllCall("LoadLibrary", "Str", "oleacc", "Ptr")
     WinGetClass, WinClass, %WinTitle%
     if (WinClass == "XLMAIN") {
-        ControlGet, hwnd, hwnd, , Excel7%Excel7#%, %WinTitle%
+        ControlGet, hwnd, hwnd,, Excel7%Excel7#%, %WinTitle%
         if !ErrorLevel {
             VarSetCapacity(IID, 16)
-            NumPut(0x46000000000000C0, NumPut(0x0000000000020400, IID, "Int64"), "Int64")
+            NumPut(0x46000000000000C0, NumPut(0x0000000000020400, IID, "Int64"), "Int64")  ; IID_IDispatch
             if DllCall("oleacc\AccessibleObjectFromWindow", "Ptr", hWnd, "UInt", -16, "Ptr", &IID, "Ptr*", pacc) = 0
                 window := ComObject(9, pacc, 1), ObjAddRef(pacc)
             if ComObjType(window) = 9
