@@ -18,7 +18,7 @@ Excel_Get(WinTitle:="ahk_class XLMAIN", Excel7#:=1) {
         if !ErrorLevel {
             VarSetCapacity(IID, 16)
             NumPut(0x46000000000000C0, NumPut(0x0000000000020400, IID, "Int64"), "Int64")
-            if DllCall("oleacc\AccessibleObjectFromWindow", "Ptr", hWnd, "UInt", 0xFFFFFFF0, "Ptr", &IID, "Ptr*", pacc) = 0
+            if DllCall("oleacc\AccessibleObjectFromWindow", "Ptr", hWnd, "UInt", -16, "Ptr", &IID, "Ptr*", pacc) = 0
                 window := ComObject(9, pacc, 1), ObjAddRef(pacc)
             if ComObjType(window) = 9
                 while !xl
