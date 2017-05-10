@@ -8,7 +8,7 @@ F7::  ; Press F7 to display Excel's caption and the name of the active workbook.
 return
 
 /* ; Excel_Get by jethrow (modified)
- * Excel_Get(WinTitle="ahk_class XLMAIN", Excel7#:=1) {
+ * Excel_Get(WinTitle:="ahk_class XLMAIN", Excel7#:=1) {
  *     static h := DllCall("LoadLibrary", "Str", "oleacc", "Ptr")
  *     WinGetClass, WinClass, %WinTitle%
  *     if (WinClass == "XLMAIN") {
@@ -32,7 +32,7 @@ return
  * }  ; Needs testing
  */
 ; Excel_Get by jethrow (modified)
-Excel_Get(WinTitle="ahk_class XLMAIN", Excel7#:=1) {
+Excel_Get(WinTitle:="ahk_class XLMAIN", Excel7#:=1) {
     WinGetClass, WinClass, %WinTitle%
     if (WinClass == "XLMAIN") {
         ControlGet, hwnd, hwnd, , Excel7%Excel7#%, %WinTitle%
@@ -51,7 +51,7 @@ Excel_Get(WinTitle="ahk_class XLMAIN", Excel7#:=1) {
     return xl
 }
 
-/* Acc_ObjectFromWindow(hWnd, idObject = 0) {
+/* Acc_ObjectFromWindow(hWnd, idObject:=0) {
  *     Acc_Init()
  *     idObject &= 0xFFFFFFFF
  *     VarSetCapacity(IID, 16)
@@ -64,7 +64,7 @@ Excel_Get(WinTitle="ahk_class XLMAIN", Excel7#:=1) {
  *         return ComObject(9, pacc, 1), ObjAddRef(pacc)
  * }
  */
-Acc_ObjectFromWindow(hWnd, idObject = 0) {
+Acc_ObjectFromWindow(hWnd, idObject:=0) {
     Acc_Init()
     If DllCall("oleacc\AccessibleObjectFromWindow", "Ptr", hWnd, "UInt", idObject&=0xFFFFFFFF, "Ptr", -VarSetCapacity(IID,16)+NumPut(idObject==0xFFFFFFF0?0x46000000000000C0:0x719B3800AA000C81,NumPut(idObject==0xFFFFFFF0?0x0000000000020400:0x11CF3C3D618736E0,IID,"Int64"),"Int64"), "Ptr*", pacc)=0
         return ComObject(9, pacc, 1), ObjAddRef(pacc)
@@ -72,7 +72,7 @@ Acc_ObjectFromWindow(hWnd, idObject = 0) {
 
 Acc_Init() {
     static h
-    If !(h)
+    If !h
         h:=DllCall("LoadLibrary","Str","oleacc","Ptr")
 }
 
