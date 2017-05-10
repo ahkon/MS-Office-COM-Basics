@@ -7,6 +7,30 @@ F7::  ; Press F7 to display Excel's caption and the name of the active workbook.
             . "Workbook: " xlApp.ActiveWorkbook.Name
 return
 
+/* ; Excel_Get by jethrow (modified)
+ * Excel_Get(WinTitle="ahk_class XLMAIN", Excel7#:=1) {
+ *     static h := DllCall("LoadLibrary", "Str", "oleacc", "Ptr")
+ *     WinGetClass, WinClass, %WinTitle%
+ *     if (WinClass == "XLMAIN") {
+ *         ControlGet, hwnd, hwnd, , Excel7%Excel7#%, %WinTitle%
+ *         if !ErrorLevel {
+ *             VarSetCapacity(IID, 16)
+ *             NumPut(0x46000000000000C0, NumPut(0x0000000000020400, IID, "Int64"), "Int64")
+ *             if DllCall("oleacc\AccessibleObjectFromWindow", "Ptr", hWnd, "UInt", idObject, "Ptr", &IID, "Ptr*", pacc) = 0
+ *                 window := ComObject(9, pacc, 1), ObjAddRef(pacc)
+ *             if ComObjType(window) = 9
+ *                 while !xl
+ *                     try xl := window.Application
+ *                     catch e
+ *                         if SubStr(e.message, 1, 10) = "0x80010001"
+ *                             ControlSend, Excel7%Excel7#%, {Esc}, %WinTitle%
+ *                         else
+ *                             return "Error accessing the application object."
+ *         }
+ *     }
+ *     return xl
+ * }  ; Needs testing
+ */
 ; Excel_Get by jethrow (modified)
 Excel_Get(WinTitle="ahk_class XLMAIN", Excel7#:=1) {
     WinGetClass, WinClass, %WinTitle%
