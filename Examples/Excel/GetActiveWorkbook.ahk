@@ -52,8 +52,8 @@ GetActiveWorkbook()
 ; <Paste the GetActiveObjects function definition here>
 
 ; References:
+;   Excel_Get - https://github.com/ahkon/MS-Office-COM-Basics/blob/master/Examples/Excel/Excel_Get.ahk
 ;   Quirks of ComObjActive - https://autohotkey.com/boards/viewtopic.php?p=134048#p134048
 ;   Is a given workbook open? - https://autohotkey.com/boards/viewtopic.php?p=116315#p116315
-;   Excel_Get - https://autohotkey.com/board/topic/88337-ahk-failure-with-excel-get/?p=560328
 ;   Difference between ComObjActive and ComObjCreate - https://autohotkey.com/boards/viewtopic.php?p=133855#p133855
 ;   FanaticGuru example of GetExcel class - https://autohotkey.com/boards/viewtopic.php?p=134876#p134876
