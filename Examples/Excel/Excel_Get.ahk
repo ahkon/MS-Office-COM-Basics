@@ -3,7 +3,7 @@
 
 F7::  ; Press F7 to display Excel's caption and the name of the active workbook.
     xlApp := Excel_Get()
-    if !IsObject(xlApp)  ; If Excel_Get fails instead of returning an object it returns an error message.
+    if !IsObject(xlApp)  ; If Excel_Get fails, instead of returning an object it returns an error message.
     {
         MsgBox, 16, Excel_Get Error, % xlApp
         return
