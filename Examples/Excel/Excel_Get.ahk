@@ -43,3 +43,4 @@ Excel_Get(WinTitle:="ahk_class XLMAIN", Excel7#:=1) {
 ; References
 ;   https://autohotkey.com/board/topic/88337-ahk-failure-with-excel-get/?p=560328
 ;   https://autohotkey.com/board/topic/76162-excel-com-errors/?p=484371
+;   https://autohotkey.com/boards/viewtopic.php?p=134048#p134048
