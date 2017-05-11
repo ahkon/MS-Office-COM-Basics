@@ -38,7 +38,7 @@ Excel_Get(WinTitle:="ahk_class XLMAIN", Excel7#:=1) {
                 ControlSend, Excel7%Excel7#%, {Esc}, %WinTitle%
             else
                 return "Error accessing the application object."
-}  ; Needs testing
+}
 
 ; References
 ;   https://autohotkey.com/board/topic/88337-ahk-failure-with-excel-get/?p=560328
