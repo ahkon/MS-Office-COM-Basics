@@ -209,7 +209,7 @@ MyCollection := MyApp.Xs    ; Xs is a property belonging to the application obje
 for X, in MyCollection      ; for each X in the collection...
     MsgBox, % X.Value       ; display the "Value" property of this X[/code]We can use a [url=http://ahkscript.org/docs/commands/For.htm#COM_Objects]for-loop[/url] to enumerate a collection. Just keep in mind that normal for-loops usually store the value separately from the key: [c]for key, val in obj[/c]. But, COM objects of this type store the value in what would normally be the key: [c]for val, in obj[/c].
 
-[b]More:[/b]
+[size=108][b]More:[/b][/size]
 [list][*][url=https://github.com/ahkon/MS-Office-COM-Basics/blob/master/Examples/Excel/Range%20(Loop).ahk]Excel - Range (Loop).ahk[/url]
 [*][url=https://github.com/ahkon/MS-Office-COM-Basics/blob/master/Examples/Outlook/Sort%20items.ahk]Outlook - Sort items.ahk[/url][/list]
 [color=#0000BF][size=115]5.3 Saving References[/size][/color]
