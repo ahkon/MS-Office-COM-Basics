@@ -3,13 +3,13 @@ There are several tutorials on the forums for specific Microsoft (MS) Office pro
 
 After reading those threads, AHK users may still have questions. How did the author know the name of the method, property, or event? How did they know which parameters to use, and in which order? This tutorial will try to answer those questions for all MS Office programs in general.
 
-We will briefly introduce VBA, discuss how to find and use the MS Office documentation, and how to translate the code found there into AHK. The concepts discussed here will help a user start to learn how to do anything in MS Office that is accessible via the [url=https://msdn.microsoft.com/en-us/library/windows/desktop/ms694363%28v=vs.85%29.aspx]Component Object Model[/url] (COM), all without any preexisting AHK code. Although, some basic knowledge of AHK [url=http://ahkscript.org/docs/Variables.htm]expressions[/url] and [url=http://ahkscript.org/docs/Objects.htm]objects[/url] is required.
+We will briefly introduce VBA, discuss how to find and use the MS Office documentation, and how to translate the code found there into AHK. The concepts discussed here will help a user start to learn how to do anything in MS Office that is accessible via the [url=https://msdn.microsoft.com/en-us/library/windows/desktop/ms694363%28v=vs.85%29.aspx]Component Object Model[/url] (COM), all without any preexisting AHK code. [b]Although, some basic knowledge of AHK [url=http://ahkscript.org/docs/Variables.htm]expressions[/url] and [url=http://ahkscript.org/docs/Objects.htm]objects[/url] is required[/b].
 
 Note that this is just an introduction. There are many more [url=https://duckduckgo.com/?q=vba+tutorial]VBA tutorials[/url] and other learning resources out there.
 
 [hr][/hr]
 [color=#0000BF][size=130]2 VBA[/size][/color]
-[url=https://en.wikipedia.org/wiki/Visual_Basic_for_Applications]Visual Basic for Applications[/url] (VBA) is a programming language built into MS Office programs for the purpose of macro creation and scripting.  Many users will have seen VBA code in the past. For example, if you have ever recorded a macro and viewed the resulting code. Through COM, AHK can use the same objects a VBA script would. 
+[url=https://en.wikipedia.org/wiki/Visual_Basic_for_Applications]Visual Basic for Applications[/url] (VBA) is a programming language built into MS Office programs for the purpose of macro creation and scripting.  Many users will have seen VBA code in the past. For example, if you have ever recorded a macro and viewed the resulting code. [b]Through COM, AHK can use the same objects a VBA script would[/b]. 
 
 It is important to note that VBA and [url=https://en.wikipedia.org/wiki/Visual_Basic]Visual Basic[/url] (VB) are not the same language. VBA is a dialect of VB. If you are searching online for code examples or documentation, you may find yourself on an MSDN page with VB, C#, or C++ examples. This is a sign you are not on the right page. The MSDN pages most useful for creating AHK code are the ones written for VBA. These are the same pages found in the MS Office docs (see the Help File section below). 
 
@@ -41,13 +41,13 @@ Press [c]F2[/c] to open the [i]Object Browser[/i].
 
 [url=http://i.imgur.com/LXyceEr.png][img]http://i.imgur.com/LXyceErt.png[/img][/url]
 
-[b]Libraries[/b]: The drop down list in the top left of the window allows us to select which libraries to explore. We can generally just leave [i]<All Libraries>[/i] selected. [url=https://autohotkey.com/boards/viewtopic.php?p=107373#p107373]「More Info」[/url]
+[size=108][b]Libraries:[/b][/size] The drop down list in the top left of the window allows us to select which libraries to explore. We can generally just leave [i]<All Libraries>[/i] selected. [url=https://autohotkey.com/boards/viewtopic.php?p=107373#p107373]「More Info」[/url]
 
-[b]Search[/b]: Directly below the [i]Libraries[/i] drop down list is the [i]Search[/i] box. Search terms can be typed here and the results will be shown in the list view directly below. 
+[size=108][b]Search:[/b][/size] Directly below the [i]Libraries[/i] drop down list is the [i]Search[/i] box. Search terms can be typed here and the results will be shown in the list view directly below. 
 
-[b]Classes[/b]: The [i]Classes[/i] list box contains an alphabetical list of classes. Notably, constants are listed here too. 
+[size=108][b]Classes:[/b][/size] The [i]Classes[/i] list box contains an alphabetical list of classes. Notably, constants are listed here too. 
 
-[b]Members of[/b]: When a class is selected, either in the [i]Search Results[/i] list view or the [i]Classes[/i] list box, its members will be displayed in this list box. The icon to the left of each member indicates their type. The icon that looks like a hand pointing at a piece of paper is for properties. The green flying brick means it is a method. The lightning bolt is for events.
+[size=108][b]Members of:[/b][/size] When a class is selected, either in the [i]Search Results[/i] list view or the [i]Classes[/i] list box, its members will be displayed in this list box. The icon to the left of each member indicates their type. The icon that looks like a hand pointing at a piece of paper is for properties. The green flying brick means it is a method. The lightning bolt is for events.
 
 Select an item in either the [i]Search Results[/i], [i]Classes[/i], or [i]Members of[/i] areas and press [c]F1[/c] to view the related docs (if they exist).
 
@@ -56,9 +56,9 @@ Press [c]F1[/c] to open [i]Help[/i].
 
 [url=http://i.imgur.com/uu281V3.png][img]http://i.imgur.com/uu281V3t.png[/img][/url]
 
-[b]Search Scope[/b]: The search scope is displayed on the left side of the status bar at the bottom of the [i]Help[/i] window. We do not want to search the general [i]Help[/i]. To get search results relevant to VBA we need to switch the search scope to [i]Developer Reference[/i]. The scope should already be set correctly if you launched [i]Help [/i]from the [i]VBA Editor[/i]. The scope can be set using the drop down list to the right of the search box.
+[size=108][b]Search Scope:[/b][/size] The search scope is displayed on the left side of the status bar at the bottom of the [i]Help[/i] window. We do not want to search the general [i]Help[/i]. To get search results relevant to VBA we need to switch the search scope to [i]Developer Reference[/i]. The scope should already be set correctly if you launched [i]Help [/i]from the [i]VBA Editor[/i]. The scope can be set using the drop down list to the right of the search box.
 
-[b]Connection Status[/b]: The connection status is shown on the right side of the status bar at the bottom of the [i]Help [/i]window. We want to use [i]Offline[/i] mode. Left-click on the connection icon in the status bar and select [i]Show content only from this computer[/i].
+[size=108][b]Connection Status:[/b][/size] The connection status is shown on the right side of the status bar at the bottom of the [i]Help [/i]window. We want to use [i]Offline[/i] mode. Left-click on the connection icon in the status bar and select [i]Show content only from this computer[/i].
 
 [color=#0000BF][size=115]2.5 Macro Recorder[/size][/color]
 
@@ -78,7 +78,7 @@ VBA code examples often omit the [i]Application[/i] object. This is because VBA 
 [color=#0000BF][size=115]3.2 Properties[/size][/color]
 Properties represent a single characteristic belonging to an object. Properties can be any type of value. For example, many objects have a [i]Name[/i] property. This property will usually return a String. 
 
-[b]AHK Pseudo-Code Example[/b]: [c]MyVar := MyObj.Name[/c]
+[size=108][b]AHK Pseudo-Code Example:[/b][/size] [c]MyVar := MyObj.Name[/c]
 [list][*][i]MyObj[/i] is an AHK variable containing a reference to a COM object. This object has a property called [i]Name[/i].
 [*][i]Name[/i] returns the name of the object. 
 [*][i]MyVar[/i] variable now contains the name of [i]MyObj [/i].[/list]
@@ -95,6 +95,8 @@ Events are generated because of a user action. We can connect our scripts to COM
 In this section we will explore how to go from not knowing where to start, to finding the appropriate documentation, to creating working code in AHK. We will apply the tools and principals that were described in the previous sections. There are many ways to approach a task. We could start with the [i]Macro Recorder[/i] to figure out which commands to use. We could simply search online for a VBA code example; MS Office is ubiquitous so VBA code is easy to find. Or we could search the [i]Help [/i]and [i]Object Browser[/i]. Sometimes one technique is enough to solve a problem, but other times we could hit a wall.
 
 Each technique has its own strengths and weaknesses. You can probably guess that [i]Help [/i]is extremely useful, but sometimes it may not provide an example of the specific task we want to accomplish. An online search could provide code that does exactly what we want, but there is no guarantee the code we find will be the best way to do a given task.
+
+[size=108][b]More Examples:[/b][/size] [b]Additional examples are available on [url=https://github.com/ahkon/MS-Office-COM-Basics/tree/master/Examples]github here[/url][/b]. Also see [color=#0000BF]Section 6[/color] of this tutorial, and don't forget about searching the AHK forum as [color=#0000BF]Section 5.6[/color] describes.
 
 [color=#0000BF][size=115]4.1 Properties[/size][/color]
 Let's look at some of the "Active" properties in Excel. Open the [i]Object Browser[/i] and select [i]Application[/i] with your mouse in the [i]Classes[/i] area. All the members of the [i]Application[/i] object should be shown in the [i]Members of[/i] area. There are several properties near the top that all begin with "Active." [url=https://msdn.microsoft.com/en-us/library/office/ff834673.aspx]ActiveCell[/url], [url=https://msdn.microsoft.com/en-us/library/office/ff196586.aspx]ActiveChart[/url], [url=https://msdn.microsoft.com/en-us/library/office/ff822753.aspx]ActiveSheet[/url] etc. Based on their names, it's probably easy to guess what each of these properties returns. To verify, select a property with your mouse and press [c]F1[/c]. [url=http://i.imgur.com/owJXUv3.gif]「Demo GIF」[/url]
@@ -134,11 +136,11 @@ return[/code]In practice, hard-coding cell A1 into a script is probably not desi
 [color=#0000BF][size=115]4.3 Events[/size][/color]
 To listen for a COM object's events we will need to do two things: [list=1][*]Define a function that will be called when the event is fired. The function will have the same number of parameters as the event plus one final parameter. The extra parameter will contain a reference to the COM object we passed to ComObjConnect.
 [*]Connect our COM object to the function using [url=http://ahkscript.org/docs/commands/ComObjConnect.htm]ComObjConnect[/url]. ComObjConnect accepts two parameters, [i]ComObject[/i] and optionally [i]Prefix[/i]. [i]ComObject [/i]is the object whose events we want to listen for. [i]Prefix [/i]is a String that all of our function names will start with. [/list]
-[b]ComObjConnect Pseudo-Code Example[/b]: [c]ComObjConnect(MyVar, "MyPrefix")[/c]
+[size=108][b]ComObjConnect Pseudo-Code Example:[/b][/size] [c]ComObjConnect(MyVar, "MyPrefix")[/c]
 [list][*][i]MyVar[/i] is an AHK variable containing a reference to a COM object. This object has an event called [i]MyEvent[/i].
 [*][i]"MyPrefix"[/i] is a string to prefix to the event name.[/list]If ComObjConnect is called as above, every time the COM object fires the [i]MyEvent[/i] event, our script will look for a function named [i]MyPrefixMyEvent[/i] and attempt to call it.
 
-[b]NewDocument Event (Word) Example[/b]: The [url=https://msdn.microsoft.com/en-us/library/ff836563%28v=office.14%29.aspx]Application.NewDocument[/url] docs show that it, "Occurs when a new document is created." The event passes our function one parameter, a [url=https://msdn.microsoft.com/EN-US/library/office/ff840898.aspx]Document[/url] object. This [i]Document[/i] object represents the new document that caused the [i]NewDocument[/i] event to fire. Also remember that our function can accept one additional parameter, which will contain a reference to the COM object that fired the event. So our function definition will look like this:[code]wd_NewDocument(Doc, App)
+[size=108][b]NewDocument Event (Word) Example:[/b][/size] The [url=https://msdn.microsoft.com/en-us/library/ff836563%28v=office.14%29.aspx]Application.NewDocument[/url] docs show that it, "Occurs when a new document is created." The event passes our function one parameter, a [url=https://msdn.microsoft.com/EN-US/library/office/ff840898.aspx]Document[/url] object. This [i]Document[/i] object represents the new document that caused the [i]NewDocument[/i] event to fire. Also remember that our function can accept one additional parameter, which will contain a reference to the COM object that fired the event. So our function definition will look like this:[code]wd_NewDocument(Doc, App)
 {
     ; Do stuff here
 }[/code]When the event fires, the two variables within the function, Doc and App, will contain a reference to the newly created [i]Document[/i] object, and a reference to the Word [i]Application[/i] object which fired the event.
@@ -168,7 +170,7 @@ wd_Quit(App)                                    ; This function responds to Word
 
 This has been fixed in AHK v1.1.24.02+
 [quote="[url=https://autohotkey.com/boards/viewtopic.php?p=113049#p113049]v1.1.24.02[/url]"]Fixed ComObject to suppress any errors raised by [url=https://autohotkey.com/docs/commands/ComObjConnect.htm]disconnection of events[/url] after the script has released the object.[/quote][/spoiler]
-[b]NewDocument Event (Word) Example - Class Version[/b]: The ComObjConnect docs page contains a small note with some interesting implications:[quote="[url=http://ahkscript.org/docs/commands/ComObjConnect.htm]ComObjConnect()[/url]"][color=#909090][v1.1.01+][/color]: This parameter can be an object defined by the script. When an event is raised, the corresponding method is called. The first parameter, which is usually the hidden [c]this[/c] parameter, refers to the script-defined object, not the COM object. To catch all events without defining a method for each one, define a [url=http://ahkscript.org/docs/Objects.htm#Meta_Functions]__Call meta-function[/url].[/quote]Basically this means that instead of passing a String prefix to ComObjConnect, we can pass it an instance of an AHK class. Instead of calling a function, it will call the class methods. And defining a __Call meta-function will allow us to respond to all events without defining a method first.[code]#Persistent
+[size=108][b]NewDocument Event (Word) Example - Class Version:[/b][/size] The ComObjConnect docs page contains a small note with some interesting implications:[quote="[url=http://ahkscript.org/docs/commands/ComObjConnect.htm]ComObjConnect()[/url]"][color=#909090][v1.1.01+][/color]: This parameter can be an object defined by the script. When an event is raised, the corresponding method is called. The first parameter, which is usually the hidden [c]this[/c] parameter, refers to the script-defined object, not the COM object. To catch all events without defining a method for each one, define a [url=http://ahkscript.org/docs/Objects.htm#Meta_Functions]__Call meta-function[/url].[/quote]Basically this means that instead of passing a String prefix to ComObjConnect, we can pass it an instance of an AHK class. Instead of calling a function, it will call the class methods. And defining a __Call meta-function will allow us to respond to all events without defining a method first.[code]#Persistent
 wdApp := ComObjCreate("Word.Application")       ; Create an application object
 wdApp.Visible := true                           ; Make the application visible
 ComObjConnect(wdApp, new EventsClass)           ; Connect to the application's events
@@ -266,7 +268,10 @@ To search for for VBA examples, include a brief task description and the name of
 [*][url=https://autohotkey.com/boards/viewtopic.php?p=84712#p84712]Word - Create a document from a template and insert script-generated text[/url] (using bookmarks). The text formatting of the template is preserved.
 [*][url=https://autohotkey.com/boards/viewtopic.php?p=51275#p51275]Word - Find and replace anywhere[/url] (In headers, textboxes, etc.). This is a 1:1 translation of [url=http://word.mvps.org/faqs/customization/ReplaceAnywhere.htm]this[/url] VBA sub.
 [*][url=https://autohotkey.com/boards/viewtopic.php?t=16270]Events - Change the value of a ByRef parameter[/url]
-[*][url=https://github.com/ahkon/MS-Office-COM-Basics/tree/master/Examples]More on github...[/url][/list]
+[*][url=https://github.com/ahkon/MS-Office-COM-Basics/tree/master/Examples]More on github...[/url]
+[list][*][url=https://github.com/ahkon/MS-Office-COM-Basics/tree/master/Examples/Excel]Excel[/url]
+[*][url=https://github.com/ahkon/MS-Office-COM-Basics/tree/master/Examples/Outlook]Outlook[/url]
+[*][url=https://github.com/ahkon/MS-Office-COM-Basics/tree/master/Examples/Word]Word[/url][/list][/list]
 [color=#0000BF][size=115]6.3 Tutorials[/size][/color]
 [list][*][url=http://www.autohotkey.com/board/topic/69033-basic-ahk-l-com-tutorial-for-excel/]Basic Ahk_L COM Tutorial for Excel[/url]
 [*][url=http://www.autohotkey.com/board/topic/71335-mickers-outlook-com-msdn-for-ahk-l/]Mickers Outlook COM MSDN[/url][/list]
