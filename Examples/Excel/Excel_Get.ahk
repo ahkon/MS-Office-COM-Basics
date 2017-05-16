@@ -16,6 +16,7 @@ return
 Esc::ExitApp  ; Press Escape to exit this script.
 
 ; Excel_Get by jethrow (modified)
+; https://github.com/ahkon/MS-Office-COM-Basics/blob/master/Examples/Excel/Excel_Get.ahk
 Excel_Get(WinTitle:="ahk_class XLMAIN", Excel7#:=1) {
     static h := DllCall("LoadLibrary", "Str", "oleacc", "Ptr")
     WinGetClass, WinClass, %WinTitle%
