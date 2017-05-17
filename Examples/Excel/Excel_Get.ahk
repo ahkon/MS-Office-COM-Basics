@@ -29,7 +29,7 @@ Excel_Get(WinTitle:="ahk_class XLMAIN", Excel7#:=1) {
     if DllCall("oleacc\AccessibleObjectFromWindow", "Ptr", hWnd, "UInt", -16, "Ptr", &IID_IDispatch, "Ptr*", pacc) != 0
         return "Error calling AccessibleObjectFromWindow."
     window := ComObject(9, pacc, 1)
-    if !ComObjType(window) = 9
+    if !(ComObjType(window) = 9)
         return "Error wrapping the window object."
     Loop
         try return window.Application
