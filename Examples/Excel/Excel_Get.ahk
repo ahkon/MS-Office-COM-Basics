@@ -8,7 +8,6 @@ F7::  ; Press F7 to display Excel's caption and the name of the active workbook.
         MsgBox, 16, Excel_Get Error, % xlApp
         return
     }
-    
     MsgBox, % "Caption: " xlApp.Caption "`n"
             . "Workbook: " xlApp.ActiveWorkbook.Name
 return
