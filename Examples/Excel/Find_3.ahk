@@ -1,13 +1,12 @@
-; Note: this script is new and hasn't been tested yet.
-
 ; Usage:
 ;   Copy text to the clipboard.
-;   Press F7 to search for it in columns A and B.
+;   Press F7 to search for the clipboard text in columns A and B.
 ;   If the text is found, the found cell's address is displayed.
 
 ; Constants
 xlByColumns := 2
 xlByRows := 1
+xlPart := 2
 xlValues := -4163
 xlWhole := 1
 return
@@ -37,12 +36,12 @@ F7::
     ;           returns, and linefeeds.
     ;       After - The last cell in Rng.
     ;       LookIn - xlValues (possible constants: xlFormulas, xlValues, or xlNotes)
-    ;       LookAt - xlWhole (possible constants: xlWhole or xlPart)
+    ;       LookAt - xlPart (possible constants: xlWhole or xlPart)
     ;       SearchOrder - xlByRows (possible constants: xlByRows or xlByColumns)
     ;       SearchDirection, MatchCase, MatchByte, SearchFormat - blank/default
     ;
     ;_______.Find(What, After, LookIn, LookAt, SearchOrder, SearchDirection, MatchCase, MatchByte, SearchFormat)
-    c := Rng.Find(SearchMe, Rng.Cells(Rng.Cells.Count), xlValues, xlWhole, xlByRows)
+    c := Rng.Find(SearchMe, Rng.Cells(Rng.Cells.Count), xlValues, xlPart, xlByRows)
     if (c)
     {
         MsgBox, 64, Cell Address, % c.Address
@@ -50,5 +49,4 @@ F7::
 return
 
 ; Excel_Get is required https://autohotkey.com/boards/viewtopic.php?f=6&t=31840
-
 ; <Paste the Excel_Get function definition here>
