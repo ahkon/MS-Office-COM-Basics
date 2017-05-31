@@ -7,24 +7,24 @@
 #IfWinActive ahk_class PPTFrameClass
 
 ^1::  ; Ctrl+1 hotkey
-; Gets a reference to the active Powerpoint application object.
-pptApp := ComObjActive("Powerpoint.Application")
+    ; Gets a reference to the active Powerpoint application object.
+    pptApp := ComObjActive("Powerpoint.Application")
 
-; If text is not selected return.
-if (pptApp.ActiveWindow.Selection.Type != 3) ; ppSelectionText = 3
-    return
+    ; If text is not selected return.
+    if (pptApp.ActiveWindow.Selection.Type != 3) ; ppSelectionText = 3
+        return
 
-; Get the existing bullet format object from the selected text range.
-MyBulletFormat := pptApp.ActiveWindow.Selection.TextRange.ParagraphFormat.Bullet
+    ; Get the existing bullet format object from the selected text range.
+    MyBulletFormat := pptApp.ActiveWindow.Selection.TextRange.ParagraphFormat.Bullet
 
-; Change the bullet type to unnumbered
-MyBulletFormat.Type := 1  ; ppBulletUnnumbered = 1
+    ; Change the bullet type to unnumbered
+    MyBulletFormat.Type := 1  ; ppBulletUnnumbered = 1
 
-; BulletFormat.Character - Returns or sets the Unicode character value that is used for bullets in the specified text.
-MyBulletFormat.Character := 252
+    ; BulletFormat.Character - Returns or sets the Unicode character value that is used for bullets in the specified text.
+    MyBulletFormat.Character := 252
 
-; Set the font.
-MyBulletFormat.Font.Name := "Wingdings"
+    ; Set the font.
+    MyBulletFormat.Font.Name := "Wingdings"
 return
 
 #If  ; Turn off context sensitive hotkeys.
