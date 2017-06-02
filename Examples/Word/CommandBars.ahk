@@ -10,15 +10,14 @@
 F7::
     TrayTip, Getting Controls, Getting all commandbar controls from Word. This may take a brief moment.
     
-    ; Find all command bar controls. Gather their ID numbers and the text that is displayed in their tooltips.
+    ; Find all command bar controls. Gather their type, ID numbers, and caption.
     Controls := []
     for CommandBarControl in ComObjActive("Word.Application").CommandBars.FindControls()
     {
         ; Store each item using the Id as the key. This array will ensure duplicate items are removed; only one item is
         ; stored per ID. It also allows the items to be listed in order.
-        Controls[CommandBarControl.Id] := { Type:               CommandBarControl.Type
-                                          , Tag:                CommandBarControl.Tag
-                                          , Caption:            CommandBarControl.Caption }
+        Controls[CommandBarControl.Id] := { Type:       CommandBarControl.Type
+                                          , Caption:    CommandBarControl.Caption }
     }
     
     ; Make and format the list of items.
