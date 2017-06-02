@@ -12,19 +12,20 @@ F7::
     
     ; Find all command bar controls. Gather their type, ID numbers, and caption.
     Controls := []
-    for CommandBarControl in ComObjActive("Word.Application").CommandBars.FindControls()
+    FoundControls := ComObjActive("Word.Application").CommandBars.FindControls()
+    for CommandBarControl in FoundControls
     {
         ; Store each item using the Id as the key. This array will ensure duplicate items are removed; only one item is
         ; stored per ID. It also allows the items to be listed in order.
-        Controls[CommandBarControl.Id] := { Type:       CommandBarControl.Type
-                                          , Caption:    CommandBarControl.Caption }
+        try Controls[CommandBarControl.Id] := { Type:       CommandBarControl.Type
+                                              , Caption:    CommandBarControl.Caption }
     }
     
     ; Make and format the list of items.
-    List := "ID Number       Type    Caption`r`n----------------------------------------`r`n"
+    List := "ID          Type    Caption`r`n------------------------------------`r`n"
     for ID, Control in Controls
     {
-        List .= SubStr(ID "                ", 1, 15) " "    ; ID - Max 16 characters wide (15 + 1 space)
+        List .= SubStr(ID "            ", 1, 11) " "        ; ID - Max 12 characters wide (11 + 1 space)
         List .= SubStr(Control.Type "        ", 1, 7) " "   ; Type - Max 8 characters wide (7 + 1 space)
         List .= Control.Caption "`r`n"                      ; Caption
     }
