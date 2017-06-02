@@ -1,6 +1,7 @@
-; This script will add a check mark bullet to the selected row(s) of text.
+; This script will change bullets to a check marks in the selected row(s) of text.
+
 ; Usage:
-;   - With PowerPoint active, select text that is part of an existing bullet(s).
+;   - With PowerPoint active select text that is part of an existing bullet(s).
 ;   - Press Ctrl+1.
 ;   - The bullet on the selected line(s) will be changed to a check mark.
 
