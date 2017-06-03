@@ -1,7 +1,7 @@
-; This script shows some actions using CommandBars and CommandBarControl. Use the F7 hotkey to display the available
-; controls. Then use FindControl, as shown with the F9 and F10 hotkeys below, to execute a control action. The use of 
-; CommandBars in some Microsoft Office applications has been superseded by the ribbon, but CommandBars can be used
-; nevertheless (tested with Office 2010).
+; This script shows some actions using CommandBars and CommandBarControl objects. Use the F7 hotkey to display the
+; available controls. Then use FindControl, as shown with the F9 and F10 hotkeys below, to execute a control action. The
+; use of CommandBars in some Microsoft Office applications has been superseded by the ribbon, but CommandBars can be
+; used nevertheless (tested with Office 2010).
 
 ; Word context-sensitive hotkeys
 #IfWinActive, ahk_class OpusApp
@@ -26,13 +26,13 @@ F7::
     for ID, Control in Controls
     {
         List .= SubStr(ID "            ", 1, 11) " "        ; ID - Max 12 characters wide (11 + 1 space)
-        List .= SubStr(Control.Type "        ", 1, 7) " "   ; Type - Max 8 characters wide (7 + 1 space)
-        List .= Control.Caption "`r`n"                      ; Caption
+             .  SubStr(Control.Type "        ", 1, 7) " "   ; Type - Max 8 characters wide (7 + 1 space)
+             .  Control.Caption "`r`n"                      ; Caption
     }
     
     ; Use Notepad to display the text.
     Run, Notepad,,, NotepadPID
-    WinWaitActive, % "ahk_pid " NotepadPID  ; Wait for the Notepad window.
+    WinWait, % "ahk_pid " NotepadPID  ; Wait for the Notepad window.
     ControlSetText, Edit1, % List  ; Set control text. Use the "Last Found" window.
     TrayTip, Getting Controls, Done getting controls.
 return
@@ -43,10 +43,10 @@ F8::ComObjActive("Word.Application").CommandBars.ExecuteMso("MinimizeRibbon")
 ; Align Left -- Type (1) and ID (120) were found with the F7 hotkey above.
 F9::ComObjActive("Word.Application").CommandBars.FindControl(1, 120).Execute
 
-; Align Right -- Type (1) and ID (120) were found with the F7 hotkey above.
+; Align Right -- Type (1) and ID (121) were found with the F7 hotkey above.
 F10::ComObjActive("Word.Application").CommandBars.FindControl(1, 121).Execute
 
-#If  ; Turn off context sensitive hotkeys.
+#If  ; Turn off context-sensitive hotkeys.
 
 Esc::ExitApp  ; Press Escape to exit this script.
 
