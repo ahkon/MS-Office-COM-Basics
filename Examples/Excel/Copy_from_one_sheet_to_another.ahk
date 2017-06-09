@@ -61,7 +61,7 @@ return
         SheetNumber++  ; Add 1 to the current sheet number to get the next sheet number.
     
     xlApp.Worksheets(SheetNumber).Range( ActCell.Address, ActCell.Offset(0, 15).Address ).Value
-    := xlApp.Range( xlApp.ActiveCell, xlApp.ActiveCell.Offset(0, 15) ).Value
+    := xlApp.Range( ActCell, ActCell.Offset(0, 15) ).Value
 return
 
 
