@@ -22,10 +22,13 @@
     MyBulletFormat.Type := 1  ; ppBulletUnnumbered = 1
 
     ; BulletFormat.Character - Returns or sets the Unicode character value that is used for bullets in the specified text.
-    MyBulletFormat.Character := 252
-
-    ; Set the font.
-    MyBulletFormat.Font.Name := "Wingdings"
+    MyBulletFormat.Character := 0x2713  ; Unicode Character 'CHECK MARK' (U+2713)
+    
+    ; Or use a Wingdings check mark.
+    ;~ MyBulletFormat.Character := 252
+    ;~
+    ;~ ; Set the font.
+    ;~ MyBulletFormat.Font.Name := "Wingdings"
 return
 
 #If  ; Turn off context sensitive hotkeys.
