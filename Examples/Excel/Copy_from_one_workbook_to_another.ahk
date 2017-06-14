@@ -34,7 +34,7 @@ return
 
 ; Copy data from cell 'B3', sheet 1, 'Book2' --> to --> cell 'A1', sheet 1, 'Book1'
 ^2::  ; Ctrl+2 hotkey
-    Book1.Sheets(1).Range("A1") := Book2.Sheets(1).Range("B3")
+    Book1.Sheets(1).Range("A1").Value := Book2.Sheets(1).Range("B3").Value
 return
 
 ; Cut-and-paste cell 'C2', sheet 1, 'Book2' --> to --> cell 'A2', sheet 1, 'Book1'
