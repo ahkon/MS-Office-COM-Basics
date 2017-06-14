@@ -68,5 +68,6 @@ s.Range("A4").PasteSpecial(xlPasteValues)    ; Paste a range from the clipboard 
 s.Range("B5").Copy(s.Range("A5"))            ; Copy the range B5 to the range A5. (With formatting)
 
 ; References
+;   https://stackoverflow.com/questions/10714251/how-to-avoid-using-select-in-excel-vba-macros
 ;   https://fastexcel.wordpress.com/2011/11/30/text-vs-value-vs-value2-slow-text-and-how-to-avoid-it/
 ;   Range.Copy Method (Excel) - https://msdn.microsoft.com/en-us/library/office/ff837760.aspx
