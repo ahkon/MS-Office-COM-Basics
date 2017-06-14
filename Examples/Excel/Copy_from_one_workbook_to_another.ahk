@@ -42,7 +42,8 @@ return
     Book2.Sheets(1).Range("C2").Cut( Book1.Sheets(1).Range("A2") )
 return
 
-#If  ; Turn of context-sensitive hotkeys.
+; Turn off context-sensitive hotkeys.
+#If
 
 
 Esc::ExitApp  ; Press 'Escape' to exit this script.
