@@ -37,6 +37,11 @@ return
     Book1.Sheets(1).Range("A1") := Book2.Sheets(1).Range("B3")
 return
 
+; Cut-and-paste cell 'C2', sheet 1, 'Book2' --> to --> cell 'A2', sheet 1, 'Book1'
+^3::  ; Ctrl+3 hotkey
+    Book2.Sheets(1).Range("C2").Cut( Book1.Sheets(1).Range("A2") )
+return
+
 #If  ; Turn of context-sensitive hotkeys.
 
 
