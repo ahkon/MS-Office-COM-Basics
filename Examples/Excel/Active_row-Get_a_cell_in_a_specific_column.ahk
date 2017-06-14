@@ -9,7 +9,7 @@
     MsgBox, 64, Column D Cell Value, % "The value of the cell in column D of the active row is:`n" MyValue
 return
 
-; Turn of context-sensitive hotkeys.
+; Turn off context-sensitive hotkeys.
 #If
 
 
