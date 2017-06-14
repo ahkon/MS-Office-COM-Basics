@@ -32,6 +32,11 @@ return  ; End of Auto-execute section.
     Cell.Value := xlApp.ActiveCell.Value
 return
 
+; Copy data from cell 'B3', sheet 1, 'Book2' --> to --> cell 'A1', sheet 1, 'Book1'
+^2::  ; Ctrl+2 hotkey
+    Book1.Sheets(1).Range("A1") := Book2.Sheets(1).Range("B3")
+return
+
 #If  ; Turn of context-sensitive hotkeys.
 
 
