@@ -13,8 +13,8 @@ ExampleStr :=
         7,8"
     )
 
-; Call SafeArrayFromStr to split the string into rows and columns and create a SafeArray. MyObj will contain the
-; SafeArray and a count of the number of rows and colums that the SafeArray contains.
+; Call 'SafeArrayFromStr' to split the string into rows and columns and create a SafeArray. 'MyObj' will contain
+; the SafeArray and a count of the number of rows and colums.
 ; DelimRow = "`n"
 ; DelimCol = ","
 ; OmitRow = "`r"
