@@ -51,3 +51,6 @@ SafeArrayFromStr(Str, DelimRow, DelimCol:="", OmitRow:="", OmitCol:="")
             SafeArray[Rn - 1, Cn - 1] := Cell             ; Safearray indices start at 0 (not 1)
     return {SArr: SafeArray, Rows: MaxRow, Cols: MaxCol}
 }
+
+; References
+;    https://autohotkey.com/board/topic/56987-com-object-reference-autohotkey-v11/page-7#entry394713
