@@ -22,11 +22,13 @@ F7::
     }
     
     ; Make and format the list of items.
-    List := "ID          Type    Caption`r`n------------------------------------`r`n"
+    Spaces := "                "  ; 16 spaces
+    List := "ID          Type    Caption`r`n"
+         .  "------------------------------------`r`n"
     for ID, Control in Controls
     {
-        List .= SubStr(ID "            ", 1, 11) " "        ; ID - Max 12 characters wide (11 + 1 space)
-             .  SubStr(Control.Type "        ", 1, 7) " "   ; Type - Max 8 characters wide (7 + 1 space)
+        List .= SubStr(ID Spaces, 1, 11) A_Space            ; ID - Max 12 characters wide (11 + 1 space)
+             .  SubStr(Control.Type Spaces, 1, 7) A_Space   ; Type - Max 8 characters wide (7 + 1 space)
              .  Control.Caption "`r`n"                      ; Caption
     }
     
