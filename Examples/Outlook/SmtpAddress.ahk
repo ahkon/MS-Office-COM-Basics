@@ -20,7 +20,7 @@ if (SenderName != EmailAddress)
 MsgBox 64, Sender Email Address (2), % EmailAddress
 return
 
-; If the user is an exchange user, this resolves an exchange user's display name to an SMTP address.
+; If the sender is an exchange user, this resolves an exchange user's display name to an SMTP address.
 ResolveDisplayNameToSMTP(MailItem) {
     Recip := MailItem.Application.Session.CreateRecipient(MailItem.SenderName)
     Recip.Resolve
