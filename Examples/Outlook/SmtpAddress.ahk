@@ -38,5 +38,5 @@ ResolveDisplayNameToSMTP(MailItem) {
 }
 
 ; References
-;   - http://answers.microsoft.com/en-us/office/forum/office_2007-customize/need-vba-to-obtain-smtp-address-of-exchange-user/97833c7c-18e3-4b8d-923a-606b81c9ecd1?auth=1
-;   - https://autohotkey.com/board/topic/71335-mickers-outlook-com-msdn-for-ahk-l/page-3#entry731838
+;   http://answers.microsoft.com/en-us/office/forum/office_2007-customize/need-vba-to-obtain-smtp-address-of-exchange-user/97833c7c-18e3-4b8d-923a-606b81c9ecd1?auth=1
+;   https://autohotkey.com/board/topic/71335-mickers-outlook-com-msdn-for-ahk-l/page-3#entry731838
