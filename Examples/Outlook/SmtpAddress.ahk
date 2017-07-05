@@ -33,9 +33,7 @@ ResolveDisplayNameToSMTP(MailItem) {
             if (Recip.AddressEntry.GetExchangeDistributionList != "")
                 return Recip.AddressEntry.GetExchangeDistributionList.PrimarySmtpAddress
     }
-    ; If 'EmailAddress' is blank. For example, if 'SenderName' does not belong to an exchange user, but still differs
-    ; from 'EmailAddress'.
-    if (EmailAddress = "")
+    else
         return MailItem.SenderEmailAddress
 }
 
