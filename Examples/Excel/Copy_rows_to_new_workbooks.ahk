@@ -60,13 +60,13 @@ while myCell.Formula != "" {
     rng.Copy( wbkNew.Worksheets(1).Range("A2") )
     
     ; Autosize all columns on sheet1 in the new workbook.
-    wbkNew.Worksheets(1).Columns.AutoFit  ; <--
+    wbkNew.Worksheets(1).Columns.AutoFit
     
     ; Change the number format in column 'C' (the 3rd column).
-    wbkNew.Worksheets(1).Columns(3).NumberFormat := "0.00"  ; <--
+    wbkNew.Worksheets(1).Columns(3).NumberFormat := "0.00"
 
     ; SaveAs
-    wbkNew.SaveAs(saveDir "\" wbkNewName ".xlsx")  ; <--
+    wbkNew.SaveAs(saveDir "\" wbkNewName ".xlsx")
 
     ; Close the new workbook.
     ;~ MsgBox  ; Pause to see the workbook.
