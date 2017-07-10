@@ -29,11 +29,14 @@ SplitPath, % wbkPath,, saveDir
 ; Create an instance of Excel
 xlApp := ComObjCreate("Excel.Application")
 
-; Make Excel visible.
-;~ xlApp.Visible := true
+; Make Excel visible. This line can be removed once you verify that the script runs without any errors.
+xlApp.Visible := true
 
 ; Open the source workbook.
 wbkSrc := xlApp.Workbooks.Open(wbkPath)
+
+; Change the number format in column 'C' (the 3rd column).
+wbkSrc.Worksheets(1).Columns(3).NumberFormat := "0.00"
 
 ; Get the header row from sheet1.
 HeaderRow := wbkSrc.Worksheets(1).Rows(1)
@@ -61,9 +64,6 @@ while myCell.Formula != "" {
     
     ; Autosize all columns on sheet1 in the new workbook.
     wbkNew.Worksheets(1).Columns.AutoFit
-    
-    ; Change the number format in column 'C' (the 3rd column).
-    wbkNew.Worksheets(1).Columns(3).NumberFormat := "0.00"
 
     ; SaveAs
     wbkNew.SaveAs(saveDir "\" wbkNewName ".xlsx")
@@ -77,8 +77,8 @@ while myCell.Formula != "" {
     myCell := rng.Cells(rng.Cells.Count).Offset(2, 0)
 }
 
-; Close the source workbook.
-wbkSrc.Close()
+; Close the source workbook. 0 = do not save changes.
+wbkSrc.Close(0)
 
 ; Quit Excel.
 xlApp.Quit()
