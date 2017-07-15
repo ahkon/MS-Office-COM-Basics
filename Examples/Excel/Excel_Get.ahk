@@ -1,19 +1,3 @@
-; This script demonstrates using the Excel_Get function to get a reference to the active Excel application. Excel_Get 
-; has a nice feature where it will exit edit-mode if you happen to be editing a cell when the function is called. 
-
-F7::  ; Press F7 to display Excel's caption and the name of the active workbook.
-    xlApp := Excel_Get()
-    if !IsObject(xlApp)  ; If Excel_Get fails it returns an error message instead of an object.
-    {
-        MsgBox, 16, Excel_Get Error, % xlApp
-        return
-    }
-    MsgBox, % "Caption: " xlApp.Caption "`n"
-            . "Workbook: " xlApp.ActiveWorkbook.Name
-return
-
-Esc::ExitApp  ; Press Escape to exit this script.
-
 ; Excel_Get by jethrow (modified)
 ; https://github.com/ahkon/MS-Office-COM-Basics/blob/master/Examples/Excel/Excel_Get.ahk
 Excel_Get(WinTitle:="ahk_class XLMAIN", Excel7#:=1) {
