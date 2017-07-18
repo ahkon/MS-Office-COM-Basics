@@ -13,7 +13,7 @@ xlApp.Visible := true                                                          ;
 MyWorkbook := xlApp.Workbooks.Open(WorkbookPath)                                ; Open the workbook
 CellA2 := xlApp.Cells(2, 1)                                          ; Store a reference to cell A2
 LastCell := CellA2.End(xlDown).Offset(0, 1)  ; Store the last cell. .End is like pressing Ctrl+Down
-MyRange := xlApp.Range(CellA2, LastCell)                 ; Store a refence to the Range A2:LastCell
+MyRange := xlApp.Range(CellA2, LastCell)               ; Store a reference to the Range A2:LastCell
 CellNumber := 1                                   ; This variable will store the cell number to use
 CellCount := MyRange.Cells.Count                            ; Store the count of cells in the range
 return
