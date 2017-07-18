@@ -19,7 +19,7 @@ CellCount := MyRange.Cells.Count                            ; Store the count of
 return
 
 ^F12::                                                                            ; Ctrl+F12 hotkey
-    SendRaw % MyRange.Cells(CellNumber).Text     ; Send the current cell specified by 'CellNumber'
+    SendRaw % MyRange.Cells(CellNumber).Text      ; Send the current cell specified by 'CellNumber'
     CellNumber++                                                     ; Increase 'CellNumber' by one
     if (CellNumber > CellCount) {    ; If 'CellNumber' is greater than the total amount of cells...
         MsgBox, 64, Info, Finished. No more cells.                                           ; Done
