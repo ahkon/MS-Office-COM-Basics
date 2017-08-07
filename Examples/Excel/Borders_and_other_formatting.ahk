@@ -22,6 +22,7 @@ ExObj := [ [2, "Abc", "asdf1234"]
          , [7, "Opq", "dfgh4567"] ]
 
 xlApp := ComObjCreate("Excel.Application")  ; Create an Excel Application object.
+xlApp.Visible := true                       ; Make Excel visible.
 WrkBk := xlApp.Workbooks.Add                ; Create a new Workbook object.
 
 ; Create a SafeArray containing the proper amount of rows and columns. 4 extra rows are added for the column headings,
@@ -88,10 +89,6 @@ for i, Const in [xlEdgeLeft, xlEdgeTop, xlEdgeBottom, xlEdgeRight] {
     ThisRange.Borders(Const).LineStyle := xlContinuous
     ThisRange.Borders(Const).Weight := xlMedium
 }
-
-; Show Excel. If the script encounters an error before Excel is visible but after ComObjCreate, Excel will need to be 
-; closed from the Windows Task Manager. So move this line to directly after ComObjCreate when making any changes.
-xlApp.Visible := true
 
 TotalRange.Select
 WrkBk.Saved := msoTrue
